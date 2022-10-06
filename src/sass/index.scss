@@ -3,9 +3,7 @@
 @import './utils/placeholders';
 @import './utils/visually-hidden';
 
-@import './base/container';
-@import './base/common';
-@import './base/resets';
+@import './base/base-index.scss';
 
 @import './components/components.scss';
 
