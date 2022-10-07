@@ -77,7 +77,8 @@ API/AXIOS/Запити Написати всі axios.get src/js/ api
    сторінку
 2. FT-05 Зверстати шаблон картки одного фільму
 
-! "Юра Погорілець" src/js/common - pagination.js
+! "Юра Погорілець" src/js/common - pagination.js/ src/partials pagination.html/
+scss
 
 1. FT-08 Зверстати чи підключити номери сторінок (пагінація) на головній
    сторінці
