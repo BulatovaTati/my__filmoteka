@@ -12,3 +12,11 @@ body {
         @include lh(24px, 20px, 20px);
     }
 }
+
+body {
+
+    &.modal-open,
+    &.is-open {
+        overflow: hidden;
+    }
+}
