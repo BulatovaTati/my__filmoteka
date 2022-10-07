@@ -32,14 +32,12 @@
  .footer__info {
      margin-bottom: 10px;
 
-
      @media screen and (min-width: getSize(tablet)) {
          margin-bottom: 0;
 
          &:not(:last-child) {
              margin-right: 4px;
          }
-
      }
  }
 
@@ -48,9 +46,10 @@
      display: inline-block;
  }
 
- .footer__dev--link {
+ .footer__link {
      margin: 0;
      text-decoration: underline;
+     color: getColor(footer-text-color);
  }
 
  .footer__icon {
