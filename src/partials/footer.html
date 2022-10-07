@@ -9,7 +9,29 @@
         <use href="./images/sprite.svg#icon-heart"></use>
       </svg>
       <span class="footer__by_text">by</span>
-      <a class="footer__link" href="#">GoIT Students</a>
+
+      <button type="button" class="footer__btn js-open-modal" data-modal="2">
+        GoIT Students
+      </button>
     </p>
+    <div class="overlay"></div>
+    <div class="modal modal__wrapper" data-modal="2">
+      <button class="modal__btn js-modal-close">
+        <svg width="20" height="20" class="modal__icon">
+          <use href="./images/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+      <ul class="team__list">
+        <li class="team__item">Tetiana Bulatova</li>
+        <li class="team__item">Diana Pustolyakova</li>
+        <li class="team__item">Yaroslav Taranovskiy</li>
+        <li class="team__item">Rostyslav Kviatkovskyi</li>
+        <li class="team__item">Yurii Pohorilets</li>
+        <li class="team__item">Vitaliy Poliakov</li>
+        <li class="team__item">Vitaliy Mishugli</li>
+        <li class="team__item">Oleksandr Kolisnyk</li>
+        <li class="team__item">Andrii Stepaniuk</li>
+      </ul>
+    </div>
   </div>
 </footer>

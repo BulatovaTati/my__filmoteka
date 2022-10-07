@@ -5,7 +5,7 @@
      padding-top: 28px;
 
      background-color: getColor(footer-bcg);
-
+     font-weight: 400;
      @include lh(16px, 14px, 14px);
      color: getColor(footer-text-color);
      text-align: center;
@@ -59,4 +59,19 @@
 
  .footer__text {
      margin-right: 10px;
+ }
+
+ .footer__btn {
+     padding: 0;
+     border: none;
+     font-weight: 400;
+     @include lh(16px, 14px, 14px);
+     cursor: pointer;
+     color: getColor(footer-text-color);
+     background-color: transparent;
+     border-bottom: 1px solid getColor(footer-text-color);
+
+     @media screen and (min-width: getSize(tablet)) {
+         @include lh(19px, 16px, 16px);
+     }
  }

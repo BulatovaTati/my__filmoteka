@@ -15,8 +15,10 @@ body {
 
 body {
 
+
     &.modal-open,
     &.is-open {
         overflow: hidden;
     }
+
 }
