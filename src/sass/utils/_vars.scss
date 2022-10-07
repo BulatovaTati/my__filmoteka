@@ -1,43 +1,43 @@
 $colors: (
-    'primary-text-color': #000000,
-    'accent-text-color': #FF6B08,
-    'white-text-color': #ffffff,
-    'footer-text-color':#545454,
-    'current-page': #FF001B,
-    'my-library-current-bcg-button': #FF6B02,
+  'primary-text-color': #000000,
+  'accent-text-color': #ff6b08,
+  'white-text-color': #ffffff,
+  'footer-text-color': #545454,
+  'current-page': #ff001b,
+  'my-library-current-bcg-button': #ff6b02,
 
-    'body-bcg': #E5E5E5,
-    'modal-overlay': rgba(0, 0, 0, 0.56),
-    'modal-items': #8C8C8C,
+  'body-bcg': #e5e5e5,
+  'modal-overlay': rgba(0, 0, 0, 0.56),
+  'modal-items': #8c8c8c,
 
-    'pagination-arrow': #F7F7F7,
-    'footer-bcg': #F7F7F7,
+  'pagination-arrow': #f7f7f7,
+  'footer-bcg': #f7f7f7,
 );
 
 // Colors
 @function getColor($key) {
-    @return map-get($colors, $key);
+  @return map-get($colors, $key);
 }
 
 $properties: (
-    'cubic': cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    'time': 300ms,
+  'cubic': cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  'time': 300ms,
 );
 
 // Properties
 @function getProperty($key) {
-    @return map-get($properties, $key);
+  @return map-get($properties, $key);
 }
 
 $breakpoints: (
-    'wmobile':319.98px,
-    'mobile': 320px,
-    'tablet': 768px,
-    'wdesktop': 1279.98px,
-    'desktop': 1280px,
+  'wmobile': 319.98px,
+  'mobile': 320px,
+  'tablet': 768px,
+  'wdesktop': 1279.98px,
+  'desktop': 1280px,
 );
 
-// Breakpoints 
+// Breakpoints
 @function getSize($key) {
-    @return map-get($breakpoints, $key);
+  @return map-get($breakpoints, $key);
 }
