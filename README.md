@@ -113,7 +113,8 @@ scss
 2. FT-19 За натисканням на кнопку "Add to queue" фільм додається до черги
    поточного користувача (local-storage)
 
-! "Андрій Степанюк" src/js/other - localeStrageServices
+! "Андрій Степанюк" src/js/other - localeStrageServices src/partions -
+spinner.html/scss
 
 1. FT-21 Підключити/зверстати Loader (spinner) для асинхронних запитів
 2. FT-22 To top, скрол на верх
