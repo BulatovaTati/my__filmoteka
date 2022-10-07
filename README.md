@@ -83,7 +83,7 @@ API/AXIOS/Запити Написати всі axios.get src/js/ api
    сторінці
 2. FT-09 При переході на кожну сторінку малювати відповідну частину фільмів
 
-! "Diana Pustolyakova"
+! "Diana Pustolyakova" src/partials /library-collection/ header-library
 
 1. FT-11 Зверстати контейнер сторінки "My Library" для правильного
    позиціонування карток фільмів (мобілка, планшет, робочий стіл)
