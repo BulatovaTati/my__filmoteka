@@ -7,23 +7,27 @@
 
     display: flex;
     flex-direction: row;
-
+    justify-content: space-evenly;
     flex-wrap: wrap;
     row-gap: 20px;
+
     @media screen and (min-width: 768px) {
       row-gap: 32px;
       column-gap: 32px;
     }
+
     @media screen and (min-width: 1280px) {
       row-gap: 32px;
       column-gap: 15px;
     }
   }
+
   &__item {
     width: 336px;
     height: 455px;
     margin-bottom: 60px;
     background-color: darkslateblue;
+
     @media screen and (min-width: 1280px) {
       width: 395px;
       height: 574px;
