@@ -18,24 +18,22 @@
         </ul>
       </nav>
     </div>
-    <div class="input">
-      <form class="input__form">
-        <input
-          class="input__header"
-          name="searchQuery"
-          type="text"
-          placeholder="Search films"
-          autocomplete="off"
-        />
-        <button class="input__search-btn" type="submit">
-          <svg width="18" height="18" class="input__search-icon">
-            <use href="./images/sprite.svg#icon-search"></use>
-          </svg>
-        </button>
-      </form>
-    </div>
+    <form class="input__form" id="search-form">
+      <input
+        class="input__header"
+        name="searchQuery"
+        type="text"
+        placeholder="Search films"
+        autocomplete="off"
+      />
+      <button class="input__search-btn" type="submit">
+        <svg width="12" height="12" class="input__search-icon">
+          <use href="./images/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+    </form>
     <p class="input__error" id="js-input-error">
-      Search result not successful. Enter the correct movie name and
+      Please enter a movie name to search.
     </p>
   </div>
 </header>
