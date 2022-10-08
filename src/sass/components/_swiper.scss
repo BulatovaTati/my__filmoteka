@@ -2,3 +2,20 @@
     width: 100%;
     height: 300px;
 }
+
+.swiper-img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.swiper--flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper___comment {
+    margin-bottom: 10px;
+}
