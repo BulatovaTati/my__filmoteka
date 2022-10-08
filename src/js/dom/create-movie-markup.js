@@ -23,7 +23,6 @@ function popularMoviesSearch() {
 
 function cardRender(result) {
   for (let i = 0; i < result.length; i += 1) {
-    console.log(result[i]);
     let title = '';
     if (result[i].hasOwnProperty('title')) {
       title = result[i].title;
@@ -32,7 +31,7 @@ function cardRender(result) {
       title = result[i].name;
     }
     const year = result[i].release_date.slice(0, 4);
-    console.log(year);
+
     const src = result[i].poster_path;
     refs.cardsContainer.insertAdjacentHTML(
       'afterbegin',

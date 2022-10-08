@@ -1,14 +1,14 @@
-.overlay.is-hidden .modal__wrapper {
+.overlay.is-hidden .footer__wrapper {
     transform: translate(-50%, -50%) scale(0.4);
     opacity: 0;
 }
 
-.overlay .modal__wrapper {
+.overlay .footer__wrapper {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
-.modal__btn {
+.foother-modal__btn {
     width: 30px;
     height: 30px;
     cursor: pointer;

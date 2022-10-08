@@ -4,5 +4,4 @@ import './input-search';
 import './queue';
 import './watched';
 import './create-movie-markup';
-import './modal-foother';
 import './create-movie-modal-markup';
