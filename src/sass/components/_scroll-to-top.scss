@@ -19,9 +19,14 @@
     border: 10px double #ff6b08;
 }
 
-.scrolltop__btn:hover {
+.scrolltop__btn:hover,
+.scrolltop__btn:focus {
         opacity: 1;
     }
+
+.transitionBtn {
+     transition: 1000ms;
+ }
 
 .scrolltop__icon {
     width: 50px;
@@ -29,3 +34,8 @@
     fill: #ff6b08;
 }
 
+.is-hidden-button {
+    opacity: 0;
+    pointer-events: 0;
+    visibility: hidden;
+}
