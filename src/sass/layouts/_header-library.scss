@@ -8,8 +8,12 @@
     border-radius: 5px;
     background-color: transparent;
     color: white;
-    width: 147px;
-    height: 42px;
+    width: 130px;
+    height: 44px;
+    @media screen and (min-width: 768px) {
+      width: 147px;
+      height: 42px;
+    }
     &-active {
       background: #ff6b01;
       border: none;
