@@ -23,10 +23,13 @@
   }
 
   &__item {
-    width: 336px;
-    height: 455px;
+    width: 280px;
+    height: 440px;
     margin-bottom: 60px;
-    background-color: darkslateblue;
+    @media screen and (min-width: 768px) {
+      width: 336px;
+      height: 495px;
+    }
 
     @media screen and (min-width: 1280px) {
       width: 395px;
