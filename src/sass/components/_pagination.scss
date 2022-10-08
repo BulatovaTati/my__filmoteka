@@ -2,7 +2,7 @@
   @extend %list;
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 100%;
+  max-width: 100%;
 
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@
   @extend %link;
   margin-right: 4px;
   padding: 13px;
-  min-width: 40px;
+  width: 40px;
   height: 40px;
 
   display: flex;
@@ -108,7 +108,13 @@
   order: 1;
 }
 
-// .tui-is-disabled {
-//   opacity: 0;
-//   visibility: hidden;
-// }
+.custom-class-last,
+.custom-class-first,
+.tui-next-is-ellip.tui-last-child,
+.tui-prev-is-ellip.tui-first-child {
+  display: none;
+
+  @media screen and (min-width: getSize(tablet)) {
+    display: inline;
+  }
+}
