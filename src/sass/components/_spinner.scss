@@ -1,0 +1,48 @@
+.spiner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+
+  transform: translate(-50%, -50%);
+}
+
+.spiner div {
+  position: absolute;
+  box-sizing: border-box;
+
+  display: block;
+  margin: 8px;
+  width: 75px;
+  height: 75px;
+
+  border: 8px solid getColor(accent-text-color);
+  border-radius: 50%;
+  border-color: getColor(accent-text-color) transparent transparent transparent;
+
+  animation: spiner 1400ms cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spiner div:nth-child(1) {
+  animation-delay: -450ms;
+}
+
+.spiner div:nth-child(2) {
+  animation-delay: -300ms;
+}
+
+.spiner div:nth-child(3) {
+  animation-delay: -150ms;
+}
+
+@keyframes spiner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

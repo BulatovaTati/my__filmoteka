@@ -1,13 +1,15 @@
-.tui-pagination {
-  @extend %list;
+.pagination {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+
+.tui-pagination {
+  @extend %list;
   max-width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  // gap: 10px;
 }
 
 .tui-page-btn {
@@ -117,4 +119,10 @@
   @media screen and (min-width: getSize(tablet)) {
     display: inline;
   }
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons';
+  font-size: 16px;
+  line-height: 1;
 }
