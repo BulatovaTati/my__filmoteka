@@ -1,4 +1,4 @@
-(function (e) {
+!(function (e) {
   'function' != typeof e.matches &&
     (e.matches =
       e.msMatchesSelector ||
