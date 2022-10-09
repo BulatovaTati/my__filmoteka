@@ -13,12 +13,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
   </head>
   <body>
@@ -31,8 +35,31 @@
     <!-- Scroll to top -->
 
     <!-- Modal to one movie -->
-    <include src="./partials/modal_movie.html"></include>
+    <include src="./partials/spiner.html"></include>
+    <include src="./partials/modal-movie-chyhryn.html"></include>
     <include src="./partials/scroll-to-top.html"></include>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.swiper', {
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        effect: 'flip',
+        flipEffect: {
+          slideShadows: false,
+        },
+      });
+    </script>
     <script type="module" src="./index.js"></script>
   </body>
 </html>

@@ -1,1 +1,2 @@
 import './localeStorageServices';
+import './swiper';

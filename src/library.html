@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <include src="./partials/header-library.html"></include>
@@ -27,8 +31,34 @@
       <include src="./partials/movies.html"></include>
     </main>
     <include src="./partials/footer.html"></include>
+    <!-- Scroll to top -->
+
+    <!-- Modal to one movie -->
     <include src="./partials/spiner.html"></include>
+    <include src="./partials/modal-movie-chyhryn.html"></include>
     <include src="./partials/scroll-to-top.html"></include>
-    <script type="module" src="./index.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.swiper', {
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        effect: 'flip',
+        flipEffect: {
+          slideShadows: false,
+        },
+      });
+    </script>
+    <!-- <script type="module" src="./index.js"></script> -->
   </body>
 </html>
