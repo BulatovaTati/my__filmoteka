@@ -27,6 +27,12 @@
 
 .swiper__link {
     cursor: pointer;
+    transition: transform getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.2)
+    }
 }
 
 .swiper__comment {
