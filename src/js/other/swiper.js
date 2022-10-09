@@ -1,5 +1,5 @@
 // import Swiper from 'swiper';
-// import 'swiper/swiper-bundle.css';
+import 'swiper/swiper-bundle.css';
 
 const swiper = new Swiper('.swiper', {
   loop: true,
