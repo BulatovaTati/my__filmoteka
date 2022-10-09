@@ -8,9 +8,3 @@ const page = 1;
 //     renderCollection(data.results);
 //   })
 //   .catch(console.log);
-
-// window.addEventListener('load', () => {
-//   getPopularData(page).then(data => {
-//     renderCollection(data.results);
-//   });
-// });
