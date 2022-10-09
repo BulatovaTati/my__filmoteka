@@ -50,7 +50,7 @@
 
 import { refs } from '../common/refs';
 import { changeGenresIdsToNames } from './changeGenresToName';
-const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 // const SIZE_IMG = '/w500';
 const noPosterImg =
   'https://sd.keepcalms.com/i/sorry-no-picture-available-2.png';
