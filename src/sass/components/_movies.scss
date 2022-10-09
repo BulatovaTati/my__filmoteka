@@ -24,6 +24,7 @@
 
   &__item {
     width: 280px;
+    object-fit: cover;
 
     @media screen and (min-width: 768px) {
       width: 336px;
@@ -51,14 +52,15 @@
       color: rgba(255, 107, 8, 1);
     }
   }
-  // &__img {
-  //   height: 400px;
-  //   @media screen and (min-width: 768px) {
-  //     width: 455px;
-  //   }
+  &__img {
+    border-radius: 5px;
+    height: 400px;
+    @media screen and (min-width: 768px) {
+      width: 455px;
+    }
 
-  //   @media screen and (min-width: 1280px) {
-  //     width: 574px;
-  //   }
-  // }
+    @media screen and (min-width: 1280px) {
+      width: 574px;
+    }
+  }
 }
