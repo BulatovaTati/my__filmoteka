@@ -46,6 +46,8 @@
 //   }
 // }
 
+// ==========================
+
 import { refs } from '../common/refs';
 import { changeGenresIdsToNames } from './changeGenresToName';
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p';
@@ -53,7 +55,7 @@ const SIZE_IMG = '/w500';
 const noPosterImg =
   'https://sd.keepcalms.com/i/sorry-no-picture-available-2.png';
 export function renderCollection(movies) {
-  const markup = movies.map(movie => createMarkupColl(movie)).join('');
+  const markup = movies.map(movie => cardRender(movie)).join('');
   return (refs.cardsContainer.innerHTML = markup);
 }
 
