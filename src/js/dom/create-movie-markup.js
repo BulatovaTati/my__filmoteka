@@ -47,7 +47,7 @@
 // }
 
 import { refs } from '../common/refs';
-import changeGenresIdsToNames from './changeGenresToName';
+import { changeGenresIdsToNames } from './changeGenresToName';
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p';
 const SIZE_IMG = '/w500';
 const noPosterImg =
