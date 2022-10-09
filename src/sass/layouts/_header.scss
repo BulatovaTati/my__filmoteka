@@ -238,11 +238,19 @@
   margin-left: -20px;
   margin-bottom: 0;
   cursor: pointer;
+  z-index: 99;
 
   &:hover,
   &:focus {
-    transform: scale(1.03);
+    transform: scale(1.2);
     transition: transform getProperty(time) getProperty(cubic);
+  }
+  &:hover,
+  &:focus svg {
+    stroke: getColor(current-page);
+  }
+  &:focus-visible {
+    outline: none;
   }
 }
 
@@ -265,4 +273,11 @@
   color: #ff001b;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+
+.visually-show-error {
+  transition: all 4s ease;
+  opacity: 1;
 }

@@ -32,9 +32,9 @@ async function onFormSubmit(e) {
   const value = e.currentTarget.searchQuery.value.trim();
   console.log(value);
   if (value === '') {
-    refs.input_error.classList.remove('visually-hidden');
+    refs.input_error.classList.add('visually-show-error');
     setTimeout(() => {
-      refs.input_error.classList.add('visually-hidden');
+      refs.input_error.classList.remove('visually-show-error');
     }, 3000);
     return;
   }
@@ -44,12 +44,13 @@ async function onFormSubmit(e) {
     const movieArr = response.results;
 
     if (movieArr.length === 0) {
-      refs.input_error.classList.remove('visually-hidden');
+      refs.input_error.classList.add('visually-show-error');
       setTimeout(() => {
-        refs.input_error.classList.add('visually-hidden');
+        refs.input_error.classList.remove('visually-show-error');
       }, 3000);
       return;
     }
+    addToStorage('keyFilm', movieArr);
     renderCollection(movieArr);
   } catch (error) {
     console.log(error);
