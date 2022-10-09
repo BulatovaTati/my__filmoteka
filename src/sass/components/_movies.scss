@@ -33,6 +33,9 @@
       width: 395px;
     }
   }
+  &_info{
+  display: flex  
+  }
 }
 .movie-card {
   &__info {
@@ -49,8 +52,37 @@
     }
     &-short {
       color: rgba(255, 107, 8, 1);
+      margin-right: 10px;
     }
+    &-rating{
+       width: 40px;
+height: 20px;
+background: #FF6B01;
+border-radius: 5px;
+margin-right: 10px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+display: flex;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+    }
+
+   
   }
+   &_about{
+               display: flex;
+    }
   // &__img {
   //   height: 400px;
   //   @media screen and (min-width: 768px) {
