@@ -52,7 +52,7 @@ function cardRender(result) {
     .map(el => {
       console.log(el);
       title = el.name || el.title;
-      year = el.release_date.slice(0, 4) || el.first_air_date.slice(0, 4);
+        year = el.release_date?.slice(0, 4) || el.first_air_date?.slice(0, 4);
       src = el.poster_path;
       rating = el.vote_average.toFixed(1);
       genre = el.genre_ids;
