@@ -61,12 +61,12 @@
   }
 }
 
-// .backdrop.is-hidden,
-// .modal-movie.is-hidden {
-//   opacity: 0;
-//   visibility: hidden;
-//   pointer-events: none;
-// }
+.backdrop.is-hidden,
+.modal-movie.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 .close-btn {
   position: absolute;
@@ -125,6 +125,7 @@
 
   font-size: 20px;
   line-height: 23px;
+  font-weight: 500;
   text-transform: uppercase;
 
   @media screen and (min-width: getSize(desktop)) {
@@ -184,12 +185,47 @@
   margin-bottom: 20px;
 
   font-size: 12px;
+  line-height: 20px;
 
-  @media screen and (min-width: getSize(tablet)) and (max-width: getSize(wdesktop)) {
-    padding-bottom: 22px;
-  }
+  // @media screen and (min-width: getSize(tablet)) and (max-width: getSize(wdesktop)) {
+  //   padding-bottom: 22px;
+  // }
 }
 
 .modal-movie__btn-list {
   display: flex;
+}
+
+.modal-movie__btn-item:not(:last-child) {
+  margin-right: 20px;
+
+  @media screen and (min-width: getSize(tablet)) {
+    margin-right: 15px;
+  }
+}
+
+.button.button--modal-btn {
+  width: 110px;
+  height: 44px;
+
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  color: #000;
+  border-color: #000;
+
+  @media screen and (min-width: getSize(tablet)) {
+    width: 125px;
+  }
+
+  @media screen and (min-width: getSize(desktop)) {
+    width: 136px;
+  }
+}
+
+.button.button--accent-btn {
+  color: getColor(white-text-color);
+  background-color: getColor(accent-bg-color);
+  border: none;
 }
