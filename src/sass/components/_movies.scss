@@ -1,15 +1,15 @@
 // < !-- <li class="cards__item"></li>-->
 // Розмітка контейнера
 .cards {
+  padding-top: 59px;
+  padding-bottom: 59px;
   &__list {
-    padding-top: 59px;
-    padding-bottom: 59px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 20px;
     align-items: baseline;
+    justify-content: center;
 
     @media screen and (min-width: 768px) {
       row-gap: 32px;
@@ -54,13 +54,13 @@
   }
   &__img {
     border-radius: 5px;
-    height: 400px;
-    @media screen and (min-width: 768px) {
-      width: 455px;
-    }
+    // height: 400px;
+    // @media screen and (min-width: 768px) {
+    //   width: 455px;
+    // }
 
-    @media screen and (min-width: 1280px) {
-      width: 574px;
-    }
+    // @media screen and (min-width: 1280px) {
+    //   width: 574px;
+    // }
   }
 }
