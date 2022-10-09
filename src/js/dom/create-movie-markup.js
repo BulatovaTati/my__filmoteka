@@ -50,8 +50,8 @@
 
 import { refs } from '../common/refs';
 import { changeGenresIdsToNames } from './changeGenresToName';
-const BASE_IMG_URL = 'https://image.tmdb.org/t/p';
-const SIZE_IMG = '/w500';
+const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
+// const SIZE_IMG = '/w500';
 const noPosterImg =
   'https://sd.keepcalms.com/i/sorry-no-picture-available-2.png';
 export function renderCollection(movies) {
@@ -64,18 +64,23 @@ export function cardRender({
   title,
   genre_ids,
   release_date,
-  vote_average,
   first_air_date,
+  vote_average,
   name,
   id,
 }) {
+  let year = '';
+  if (release_date) {
+    year = release_date.slice(0, 4);
+  }
+  else {
+    year = first_air_date.slice(0, 4);
+  }
   changeGenresIdsToNames(genre_ids);
   return `<li class="cards__item"> 
             <a href="" class="link gallery-art">
               <div class="film-img">
-                  <img class="movie-card__img" id='${id}' src="${
-    poster_path === null ? noPosterImg : BASE_IMG_URL + SIZE_IMG + poster_path
-  }" alt="Poster of movie">
+                  <img class="movie-card__img" id='${id}' src="${poster_path === null ? noPosterImg : BASE_IMG_URL + poster_path}" alt="Poster of movie">
               </div> 
               <div class="film-description">
                 <h2 class="movie-card__info-title">${
@@ -83,18 +88,22 @@ export function cardRender({
                 }</h2>      
                 <div class="film-info">          
                   <p class="genres">${
-                    genre_ids.length > 2
-                      ? genre_ids.slice(0, 2) + `<span>,Other</span>`
-                      : genre_ids
-                  }</p>
-                  <p class="year">${
-                    release_date
-                      ? release_date.slice(0, 4)
-                      : first_air_date.slice(0, 4)
+                    genre_ids ? genre_ids : 'no genres'
+                  }<span>|</span></p>
+                  <p class="year">${year ? year : 'no year'}<span>|</span></p> 
+                  <p class="rating">${
+                    vote_average ? vote_average : 'no rate'
                   }</p> 
-                  <p class="rating">${vote_average}</p> 
                 </div>
               </div>
             </a>
           </li>`;
 }
+
+// ============
+//  <p class="genres">
+//    $
+//    {genre_ids.length > 2
+//      ? genre_ids.slice(0, 2) + `<span>,Other</span>`
+//      : genre_ids}
+//  </p>;
