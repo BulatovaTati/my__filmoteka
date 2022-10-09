@@ -1,8 +1,11 @@
 // Створити функцію, з розміткою однієї картки photo h2 <p> <span> <p>
 
+import { refs } from '../common/refs';
+// refs.cardsContainer.insertAdjacentHTML(
+
 // ==== Це мій ключ. Ще не міняв на ключ ліда.
 const API_KEY = 'ec933baa094eb9a861a7c38baaae0d3c';
-const cardListEl = document.querySelector('.cards__list');
+// const cardListEl = document.querySelector('.cards__list');
 
 popularMoviesSearch();
 
@@ -20,27 +23,30 @@ function popularMoviesSearch() {
 }
 
 function cardRender(result) {
-  for (let i = 0; i < result.length; i += 1) {
-    console.log(result[i]);
-    let title = '';
-    if (result[i].hasOwnProperty('title')) {
-      title = result[i].title;
-    }
-    if (result[i].hasOwnProperty('name')) {
-      title = result[i].name;
-    }
-    const year = result[i].release_date.slice(0, 4);
-    console.log(year);
-    const src = result[i].poster_path;
-    cardListEl.insertAdjacentHTML(
+  // console.log(result);
+
+  result.map(({release_date, poster_path, title, name, genre}) => {
+    // let pageTitle = '';
+    const year = release_date.slice(0, 4);
+    const src = poster_path;
+
+    // if (item.hasOwnProperty('title')) {
+    //   pageTitle = title;
+    // }
+    // if (item.hasOwnProperty('name')) {
+    //   pageTitle = name;
+    // }
+
+    // cardListEl.insertAdjacentHTML(
+    refs.cardsContainer.insertAdjacentHTML(
       'afterbegin',
       `<li class="movie-card">    
         <img src="https://image.tmdb.org/t/p/w500${src}" alt="Movie" class="movie-card__img">
-        <div class="movie-card__info">
-          <h2 class="movie-card__info-title">${title}</h2>
-          <p class="movie-card__info-short">Genre<span> | </span>${year}</p>
-        </div>
+      <div class="movie-card__info">
+        <h2 class="movie-card__info-title">${title}</h2>
+        <p class="movie-card__info-short">Genre<span> | </span>${year}</p>
+      </div>
       </li>`
     );
-  }
+  });
 }
