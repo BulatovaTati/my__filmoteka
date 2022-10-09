@@ -4,13 +4,13 @@ const API_KEY = 'f3b7458c34b3a95455ce5f7edb53b2eb';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 // Отримую популярні фільми
-async function getPopularData() {
+async function getPopularData(page) {
   try {
     const response = await axios.get(
-      `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`
+      `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`
     );
     const data = await response.data;
-    console.log(data);
+    // console.log(data);
     return response.data;
   } catch (error) {
     console.error('Smth wrong with api get full trends' + error);
@@ -23,7 +23,7 @@ async function fetchMovieSearcher(text) {
     const response = await axios.get(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${text}`
     );
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Smth wrong with api search fetch' + error);
@@ -42,6 +42,7 @@ async function fetchMovieForId(id) {
   }
 }
 
+// Запит до жанрыв фільму
 async function getGenres() {
   try {
     const response = await axios.get(
