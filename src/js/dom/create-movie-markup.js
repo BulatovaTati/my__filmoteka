@@ -68,16 +68,31 @@ export function cardRender({
   id,
 }) {
   changeGenresIdsToNames(genre_ids);
-  return `<li class="cards__item"> <a href="" class="link gallery-art">
-           <div class="film-img"> <img class="poster" id='${id}' src="${
+  return `<li class="cards__item"> 
+            <a href="" class="link gallery-art">
+              <div class="film-img">
+                  <img class="movie-card__img" id='${id}' src="${
     poster_path === null ? noPosterImg : BASE_IMG_URL + SIZE_IMG + poster_path
-  }" alt="Poster of movie">            </div> <div class="film-description">      <h2 class="film-name">${
-    title ? title : name
-  }</h2>      <div class="film-info">          <p class="genres">${
-    genre_ids.length > 2
-      ? genre_ids.slice(0, 2) + `<span>,Other</span>`
-      : genre_ids
-  }</p>          <p class="year">${
-    release_date ? release_date.slice(0, 4) : first_air_date.slice(0, 4)
-  }</p>          <p class="rating">${vote_average}</p>      </div>        </div>        </a></li>`;
+  }" alt="Poster of movie">
+              </div> 
+              <div class="film-description">
+                <h2 class="movie-card__info-title">${
+                  title ? title : name
+                }</h2>      
+                <div class="film-info">          
+                  <p class="genres">${
+                    genre_ids.length > 2
+                      ? genre_ids.slice(0, 2) + `<span>,Other</span>`
+                      : genre_ids
+                  }</p>
+                  <p class="year">${
+                    release_date
+                      ? release_date.slice(0, 4)
+                      : first_air_date.slice(0, 4)
+                  }</p> 
+                  <p class="rating">${vote_average}</p> 
+                </div>
+              </div>
+            </a>
+          </li>`;
 }
