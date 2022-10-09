@@ -4,75 +4,93 @@
   background-position-y: 100%;
 
   margin: 0 auto;
-  background-image: linear-gradient(to right,
+  background-image: linear-gradient(
+      to right,
       rgba(0, 0, 0, 0.56),
-      rgba(0, 0, 0, 0.56)),
+      rgba(0, 0, 0, 0.56)
+    ),
     url('../images/header/mobile/1x/abstract-background-with-red-lines@1x.png');
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-    background-image: linear-gradient(to right,
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        to right,
         rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)),
+        rgba(0, 0, 0, 0.56)
+      ),
       url('../images/header/mobile/2x/abstract-background-with-red-lines@2x.png');
   }
 
   @media (min-device-pixel-ratio: 3),
-  (min-resolution: 384dpi),
-  (min-resolution: 3dppx) {
-    background-image: linear-gradient(to right,
+    (min-resolution: 384dpi),
+    (min-resolution: 3dppx) {
+    background-image: linear-gradient(
+        to right,
         rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)),
+        rgba(0, 0, 0, 0.56)
+      ),
       url('../images/header/mobile/3x/abstract-background-with-red-lines@3x.png');
   }
 
   @media screen and (min-width: getSize(tablet)) {
-    background-image: linear-gradient(to right,
+    background-image: linear-gradient(
+        to right,
         rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)),
+        rgba(0, 0, 0, 0.56)
+      ),
       url('../images/header/tablet/1x/abstract-background-with-red-lines@1x.png');
 
     @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-      background-image: linear-gradient(to right,
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
           rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)),
+          rgba(0, 0, 0, 0.56)
+        ),
         url('../images/header/tablet/2x/abstract-background-with-red-lines@2x.png');
     }
 
     @media (min-device-pixel-ratio: 3),
-    (min-resolution: 384dpi),
-    (min-resolution: 3dppx) {
-      background-image: linear-gradient(to right,
+      (min-resolution: 384dpi),
+      (min-resolution: 3dppx) {
+      background-image: linear-gradient(
+          to right,
           rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)),
+          rgba(0, 0, 0, 0.56)
+        ),
         url('../images/header/tablet/3x/abstract-background-with-red-lines@3x.png');
     }
   }
 
   @media screen and (min-width: getSize(desktop)) {
-    background-image: linear-gradient(to right,
+    background-image: linear-gradient(
+        to right,
         rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)),
+        rgba(0, 0, 0, 0.56)
+      ),
       url('../images/header/desktop/1x/abstract-background-with-red-lines@1x.png');
 
     @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-      background-image: linear-gradient(to right,
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
           rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)),
+          rgba(0, 0, 0, 0.56)
+        ),
         url('../images/header/desktop/2x/abstract-background-with-red-lines@2x.png');
     }
 
     @media (min-device-pixel-ratio: 3),
-    (min-resolution: 384dpi),
-    (min-resolution: 3dppx) {
-      background-image: linear-gradient(to right,
+      (min-resolution: 384dpi),
+      (min-resolution: 3dppx) {
+      background-image: linear-gradient(
+          to right,
           rgba(0, 0, 0, 0.56),
-          rgba(0, 0, 0, 0.56)),
+          rgba(0, 0, 0, 0.56)
+        ),
         url('../images/header/desktop/3x/abstract-background-with-red-lines@3x.png');
     }
   }
@@ -135,7 +153,6 @@
   display: flex;
   align-items: center;
   justify-content: left;
-
 }
 
 .nav__item {
@@ -149,7 +166,6 @@
     }
   }
 }
-
 
 .nav__link {
   color: getColor(white-text-color);
@@ -184,13 +200,11 @@
   align-items: center;
 }
 
-
 .input__header {
   display: inline-block;
   height: 20px;
   font-weight: 400;
   font-size: 14px;
-
 
   color: getColor(white-text-color);
   background: none;
@@ -200,8 +214,7 @@
   outline: none;
   width: 280px;
 
-  transition:
-    border-color getProperty(time) getProperty(cubic),
+  transition: border-color getProperty(time) getProperty(cubic),
     transform getProperty(time) getProperty(cubic);
 
   &:hover,
@@ -209,8 +222,6 @@
     transform: scale(1.03);
     border-bottom: 0.5px solid getColor(accent-text-color);
   }
-
-
 
   @media screen and (min-width: getSize(tablet)) {
     width: 336px;
@@ -224,14 +235,26 @@
 .input__search-btn {
   background: transparent;
   border: none;
-  margin-left: -18px;
+  margin-left: -20px;
   margin-bottom: 0;
   cursor: pointer;
-}
 
+  &:hover,
+  &:focus {
+    transform: scale(1.03);
+    transition: transform getProperty(time) getProperty(cubic);
+  }
+}
 
 .input__search-icon {
   stroke: getColor(white-text-color);
+
+  &:hover,
+  &:focus {
+    stroke: #ff001b;
+    transform: scale(1.03);
+    transition: transform getProperty(time) getProperty(cubic);
+  }
 }
 
 .input__error {
