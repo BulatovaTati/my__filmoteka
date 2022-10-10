@@ -1,24 +1,4 @@
-const settings = [
-  {
-    title: 'Terminator 3',
-    vote_average: 8.911,
-    img: 'https://upload.wikimedia.org/wikipedia/ru/c/ca/Terminator_poster.jpg',
-    release_date: '2022.12.20',
-    genre_ids: 'ection',
-  },
-  {
-    name: 'Rambo 3',
-    vote_average: 7.922,
-    img: 'https://m.media-amazon.com/images/M/MV5BODBmOWU2YWMtZGUzZi00YzRhLWJjNDAtYTUwNWVkNDcyZmU5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg',
-    first_air_date: '2022.12.20',
-    genre_ids: 'ection',
-  },
-];
-localStorage.setItem('settings', JSON.stringify(settings));
-console.log(localStorage);
-
-
-
+// пше
 
 import { refs } from '../common/refs';
 import { getFromStorage } from '../other/localeStorageServices';
@@ -52,7 +32,7 @@ function cardRender(result) {
     .map(el => {
       console.log(el);
       title = el.name || el.title;
-        year = el.release_date?.slice(0, 4) || el.first_air_date?.slice(0, 4);
+      year = el.release_date?.slice(0, 4) || el.first_air_date?.slice(0, 4);
       src = el.poster_path;
       rating = el.vote_average.toFixed(1);
       genre = el.genre_ids;
