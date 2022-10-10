@@ -2,7 +2,7 @@
     transition: background-color getProperty(time);
 
     & .movie-card__img {
-        box-shadow: 0 0 20px #faf7f7;
+        box-shadow: 0 0 20px getColor(primary-text-color);
     }
 
     & .footer {
