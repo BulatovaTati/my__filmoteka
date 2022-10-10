@@ -99,6 +99,10 @@
   }
 }
 
+.header__icon {
+  animation: scale-logo 2000ms infinite linear;
+}
+
 .logo {
   @extend %link;
 

@@ -3,8 +3,8 @@ import './sass/index.scss';
 import './js/api/api-index';
 
 // common
-import './js/common/common-index';
-
+import './js/common/refs';
+import './js/common/spinner';
 // Dom
 import './js/dom/changeGenresToName';
 import './js/dom/create-movie-markup';

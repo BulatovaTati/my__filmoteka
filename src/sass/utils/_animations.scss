@@ -7,3 +7,17 @@
         transform: scale(1.5);
     }
 }
+
+@keyframes scale-logo {
+    0% {
+        transform: scale(0.75) rotate(180 deg);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(0.75) rotate(360 deg);
+    }
+}

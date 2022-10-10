@@ -1,5 +1,22 @@
 .dark {
     transition: background-color getProperty(time);
+
+    & .movie-card__img {
+        box-shadow: 0 0 20px #faf7f7;
+    }
+
+    & .footer {
+        background-color: getColor(current-page);
+    }
+
+    & .footer__btn {
+        border-bottom: 1px solid getColor(white-text-color);
+        color: getColor(white-text-color);
+    }
+
+    & .footer__info {
+        color: getColor(white-text-color);
+    }
 }
 
 .material-icons {
@@ -17,19 +34,6 @@
     position: absolute;
     top: 185px;
     right: 20vw;
-}
-
-.dark .footer {
-    background-color: getColor(current-page);
-}
-
-.dark .footer__info,
-.dark .footer__btn {
-    color: getColor(white-text-color);
-}
-
-.dark .footer__btn {
-    border-bottom: 1px solid getColor(white-text-color);
 }
 
 .dark main {

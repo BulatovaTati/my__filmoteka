@@ -3,8 +3,8 @@ import { renderCollection } from './create-movie-markup';
 
 const page = 1;
 
-getPopularData(page)
-  .then(data => {
-    renderCollection(data.results);
-  })
-  .catch(console.log);
+// getPopularData(page)
+//   .then(data => {
+//     renderCollection(data.results);
+//   })
+//   .catch(console.log);

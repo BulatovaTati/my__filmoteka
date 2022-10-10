@@ -34,11 +34,9 @@
 
     transition: border-color getProperty(time) getProperty(cubic);
 
-
     &:hover,
     &:focus {
-
-        border: 1px solid getColor(accent-text-color);
+        border: 1px solid getColor(current-page);
     }
 
 }
