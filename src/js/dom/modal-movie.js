@@ -39,8 +39,8 @@ function clearMovieInfo() {
 
 function renderMovieInfo() {
   modalMovie.innerHTML = `<button class="btn close-btn" type="button" data-modal-close>
-    <svg class="close-btn__icon" width="30" height="30">
-      <use href="./images/sprite.svg#icon-close"></use>
+    <svg class="close-btn__icon" width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.733 10.304l-1.504-1.504-5.963 5.963-5.963-5.963-1.504 1.504 5.963 5.963-5.963 5.963 1.504 1.504 5.963-5.963 5.963 5.963 1.504-1.504-5.963-5.963 5.963-5.963z"></path>
     </svg>
   </button>
   <div class="modal-movie__thumb">
