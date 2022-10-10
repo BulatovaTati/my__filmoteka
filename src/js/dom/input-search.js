@@ -40,6 +40,7 @@ async function onFormSubmit(e) {
     setTimeout(() => {
       refs.input_error.classList.remove('visually-show-error');
     }, 3000);
+    spinner.disable();
     return;
   }
 
@@ -53,6 +54,7 @@ async function onFormSubmit(e) {
       setTimeout(() => {
         refs.input_error.classList.remove('visually-show-error');
       }, 3000);
+      spinner.disable();
       return;
     }
     addToStorage('input-value', value);
