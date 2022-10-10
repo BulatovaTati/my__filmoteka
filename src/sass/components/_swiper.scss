@@ -1,0 +1,59 @@
+.swiper {
+    width: 100%;
+    cursor: pointer;
+}
+
+.swiper-img {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-wrapper--pad {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.swiper--flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper__text {
+    margin-bottom: 10px;
+}
+
+.swiper__link {
+    cursor: pointer;
+    transition: transform getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        transform: scale(1.2)
+    }
+}
+
+.swiper__comment {
+    margin-top: 10px;
+}
+
+.swiper--bcg {
+    overflow-y: auto;
+    border-radius: 25px;
+    background-color: rgba(255, 107, 8, 0.3);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    border: none;
+    outline: none;
+    --swiper-navigation-size: 29px;
+    --swiper-theme-color: #545454;
+
+    &:hover,
+    &:focus {
+        --swiper-theme-color: #ff6b08;
+    }
+}

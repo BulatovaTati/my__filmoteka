@@ -1,0 +1,41 @@
+.dark {
+    transition: background-color getProperty(time);
+}
+
+.material-icons {
+    font-size: 23px;
+    color: getColor(white-text-color);
+    transition: color getProperty(time) getProperty(cubic);
+
+    &:hover,
+    &:focus {
+        color: getColor(accent-text-color);
+    }
+}
+
+.theme {
+    position: absolute;
+    top: 185px;
+    right: 20vw;
+}
+
+.dark .footer {
+    background-color: getColor(current-page);
+}
+
+.dark .footer__info,
+.dark .footer__btn {
+    color: getColor(white-text-color);
+}
+
+.dark .footer__btn {
+    border-bottom: 1px solid getColor(white-text-color);
+}
+
+.dark main {
+    background-color: getColor(modal-overlay);
+}
+
+.dark .movie-card__info-title {
+    color: getColor(white-text-color);
+}

@@ -1,3 +1,1 @@
-import './apiService';
-import './api-vars';
-// import './fetchApi';
+import './fetchApi';

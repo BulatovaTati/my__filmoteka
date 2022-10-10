@@ -135,7 +135,6 @@
   display: flex;
   align-items: center;
   justify-content: left;
-
 }
 
 .nav__item {
@@ -149,7 +148,6 @@
     }
   }
 }
-
 
 .nav__link {
   color: getColor(white-text-color);
@@ -184,14 +182,12 @@
   align-items: center;
 }
 
-
 .input__header {
   display: inline-block;
   height: 20px;
   font-weight: 400;
   font-size: 14px;
-
-
+  margin-bottom: 10px;
   color: getColor(white-text-color);
   background: none;
   border: none;
@@ -200,8 +196,7 @@
   outline: none;
   width: 280px;
 
-  transition:
-    border-color getProperty(time) getProperty(cubic),
+  transition: border-color getProperty(time) getProperty(cubic),
     transform getProperty(time) getProperty(cubic);
 
   &:hover,
@@ -209,8 +204,6 @@
     transform: scale(1.03);
     border-bottom: 0.5px solid getColor(accent-text-color);
   }
-
-
 
   @media screen and (min-width: getSize(tablet)) {
     width: 336px;
@@ -224,22 +217,50 @@
 .input__search-btn {
   background: transparent;
   border: none;
-  margin-left: -18px;
-  margin-bottom: 0;
+  margin-left: -20px;
+  margin-bottom: 12px;
   cursor: pointer;
-}
+  z-index: 99;
 
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+    transition: transform getProperty(time) getProperty(cubic);
+  }
+
+  &:hover,
+  &:focus svg {
+    stroke: getColor(current-page);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
 
 .input__search-icon {
   stroke: getColor(white-text-color);
+
+  &:hover,
+  &:focus {
+    stroke: #ff001b;
+    transform: scale(1.03);
+    transition: transform getProperty(time) getProperty(cubic);
+  }
 }
 
 .input__error {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.17;
-  margin-top: 20px;
   color: #ff001b;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+
+.visually-show-error {
+  transition: all 4s ease;
+  opacity: 1;
 }

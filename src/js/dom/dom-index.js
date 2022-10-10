@@ -1,7 +1,7 @@
 import './scrollToTop';
-import './movie-modal';
+import './modal-footer';
 import './input-search';
-import './queue';
-import './watched';
+import './my_library';
 import './create-movie-markup';
 import './create-movie-modal-markup';
+import './changeGenresToName';
