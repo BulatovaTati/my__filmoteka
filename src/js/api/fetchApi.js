@@ -18,10 +18,10 @@ async function getPopularData(page) {
 }
 
 // Запит по назві фільму
-async function fetchMovieSearcher(text) {
+async function fetchMovieSearcher(text, page=1) {
   try {
     const response = await axios.get(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${text}`
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${text}&page=${page}`
     );
     // console.log(response.data);
     return response.data;
