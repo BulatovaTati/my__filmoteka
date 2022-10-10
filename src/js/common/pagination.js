@@ -2,6 +2,7 @@ import Pagination from 'tui-pagination';
 import { getPopularData } from '../api/fetchApi';
 import { options } from './options-pagination';
 import Spinner from './spinner';
+import { renderCollection } from '../dom/create-movie-markup';
 
 export {
   getPopularData,
@@ -20,15 +21,15 @@ async function onPaginationClick(e) {
 
   spinner.enable();
   const data = await getPopularData(selectedPage);
-  onTopScroll();
+
+  const render = await renderCollection(data.results);
+  setTimeout(() => {
+    onTopScroll();
+  }, 400);
 
   setTimeout(() => {
     spinner.disable();
   }, 400);
-
-  // console.log(data);
-  // options.totalItems = 100;
-  // console.log(options.totalItems);
 }
 
 function onTopScroll() {
