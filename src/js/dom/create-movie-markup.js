@@ -80,7 +80,9 @@ export function cardRender({
   return `<li class="cards__item"> 
             <a href="" class="link gallery-art">
               <div class="film-img">
-                  <img class="movie-card__img" id='${id}' src="${poster_path === null ? noPosterImg : BASE_IMG_URL + poster_path}" alt="Poster of movie">
+                  <img class="movie-card__img" id='${id}' src="${
+    poster_path === null ? noPosterImg : BASE_IMG_URL + poster_path
+  }" alt="Poster of movie">
               </div> 
               <div class="film-description">
                 <h2 class="movie-card__info-title">${
@@ -88,12 +90,18 @@ export function cardRender({
                 }</h2>      
                 <div class="film-info">          
                   <p class="genres">${
-                    genre_ids ? genre_ids : 'no genres'
-                  }<span>|</span></p>
-                  <p class="year">${year ? year : 'no year'}<span>|</span></p> 
-                  <p class="rating">${
-                    vote_average ? vote_average : 'no rate'
-                  }</p> 
+                    genre_ids ? genre_ids.join(', ') : 'no genres'
+                  }<span>${' '}|${' '}</span></p>
+                  <p class="year">${
+                    year ? year : 'no year'
+                  }<span>${' '}|${' '}</span></p> 
+                  <div class="rating-wrap">
+                    <p class="rating">${
+                      vote_average.toFixed(1)
+                        ? vote_average.toFixed(1)
+                        : 'no rate'
+                    }</p> 
+                  </div>
                 </div>
               </div>
             </a>
