@@ -2,6 +2,7 @@ import { refs } from '../common/refs';
 import { fetchMovieSearcher, getGenres } from '../api/fetchApi';
 import { renderCollection } from './create-movie-markup';
 import { addToStorage } from '../other/localeStorageServices';
+import Spinner from '../common/spinner';
 // refs.search_form.addEventListener('submit', e => {
 //   e.preventDefault();
 //   const value = e.currentTarget.searchQuery.value.trim();
@@ -24,12 +25,14 @@ import { addToStorage } from '../other/localeStorageServices';
 // getGenres().then(data => {
 //   addToStorage('allGenres', data.genres);
 // });
+const spinner = new Spinner();
 
 refs.search_form.addEventListener('submit', onFormSubmit);
 
 async function onFormSubmit(e) {
   e.preventDefault();
   const value = e.currentTarget.searchQuery.value.trim();
+  spinner.enable();
   console.log(value);
   if (!value) {
     refs.input.value = '';
@@ -52,7 +55,8 @@ async function onFormSubmit(e) {
       }, 3000);
       return;
     }
-    // addToStorage('keyFilm', movieArr);
+    addToStorage('input-value', value);
+    spinner.disable();
     renderCollection(movieArr);
     refs.input.value = '';
   } catch (error) {
