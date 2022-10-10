@@ -1,15 +1,14 @@
 // < !-- <li class="cards__item"></li>-->
-// Розмітка контейнера
 .cards {
+  padding-top: 59px;
+  padding-bottom: 59px;
   &__list {
-    padding-top: 59px;
-    padding-bottom: 59px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 20px;
     align-items: baseline;
+    justify-content: center;
 
     @media screen and (min-width: 768px) {
       row-gap: 32px;
@@ -24,6 +23,7 @@
 
   &__item {
     width: 280px;
+    object-fit: cover;
 
     @media screen and (min-width: 768px) {
       width: 336px;
@@ -32,9 +32,6 @@
     @media screen and (min-width: 1280px) {
       width: 395px;
     }
-  }
-  &_info{
-  display: flex  
   }
 }
 .movie-card {
@@ -45,7 +42,7 @@
       margin-top: 8px;
       @include lh(16px, 12px, 12px);
     }
-
+    
     @media screen and (min-width: 1280px) {
       margin-top: 12px;
       @include lh(24px, 20px, 20px);
@@ -54,43 +51,16 @@
       color: rgba(255, 107, 8, 1);
       margin-right: 10px;
     }
-    &-rating{
-       width: 40px;
-height: 20px;
-background: #FF6B01;
-border-radius: 5px;
-margin-right: 10px;
+}
+  &__img {
+    border-radius: 5px;
+    // height: 400px;
+    // @media screen and (min-width: 768px) {
+    //   width: 455px;
+    // }
 
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
-/* identical to box height */
-
-display: flex;
-justify-content: space-around;
-align-items: center;
-text-align: center;
-text-transform: uppercase;
-
-color: #FFFFFF;
-
-    }
-
-   
+    // @media screen and (min-width: 1280px) {
+    //   width: 574px;
+    // }
   }
-   &_about{
-               display: flex;
-    }
-  // &__img {
-  //   height: 400px;
-  //   @media screen and (min-width: 768px) {
-  //     width: 455px;
-  //   }
-
-  //   @media screen and (min-width: 1280px) {
-  //     width: 574px;
-  //   }
-  // }
 }

@@ -1,5 +1,5 @@
 import './scrollToTop';
-import './movie-modal';
+import './modal-footer';
 import './input-search';
 import './my_library';
 import './create-movie-markup';
