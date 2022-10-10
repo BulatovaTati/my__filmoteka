@@ -70,8 +70,12 @@
      color: getColor(footer-text-color);
      background-color: transparent;
      border-bottom: 1px solid getColor(footer-text-color);
+     transition: text-shadow getProperty(time) getProperty(cubic);
+
 
      @media screen and (min-width: getSize(tablet)) {
          @include lh(19px, 16px, 16px);
      }
+
+
  }

@@ -60,6 +60,8 @@ async function onFormSubmit(e) {
   }
 }
 
-getGenres().then(data => {
-  addToStorage('allGenres', data.genres);
-});
+getGenres()
+  .then(data => {
+    addToStorage('allGenres', data.genres);
+  })
+  .catch(console.log);

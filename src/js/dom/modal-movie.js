@@ -1,9 +1,46 @@
-<div class="backdrop is-hidden"></div>
-<div class="modal-movie is-hidden">
-  <!-- Цей код буде перенесений в шаблон і буде рендеритися через JS -->
-  <button class="btn close-btn" type="button" data-modal-close>
-    <svg class="close-btn__icon" width="30" height="30">
-      <use href="./images/sprite.svg#icon-close"></use>
+const cardsList = document.querySelector('.cards__list');
+const modalMovie = document.querySelector('.modal-movie');
+const backdrop = document.querySelector('.backdrop');
+
+cardsList.addEventListener('click', onCardClick);
+
+function onCardClick(e) {
+  e.preventDefault();
+  if (e.target !== cardsList) {
+    modalMovieToggle();
+    renderMovieInfo();
+    backdrop.addEventListener('click', onCloseModal);
+    window.addEventListener('keydown', onCloseModal);
+    modalMovie.addEventListener('click', onCloseModal);
+  }
+}
+
+function modalMovieToggle() {
+  backdrop.classList.toggle('is-hidden');
+  modalMovie.classList.toggle('is-hidden');
+}
+
+function onCloseModal(e) {
+  e.preventDefault();
+  const isContainsClass = e.target.classList.contains('close-btn__icon');
+
+  if (e.key === 'Escape' || isContainsClass || e.target === backdrop) {
+    modalMovieToggle();
+    clearMovieInfo();
+    window.removeEventListener('keydown', onCloseModal);
+    backdrop.removeEventListener('click', onCloseModal);
+    modalMovie.removeEventListener('click', onCloseModal);
+  }
+}
+
+function clearMovieInfo() {
+  modalMovie.innerHTML = '';
+}
+
+function renderMovieInfo() {
+  modalMovie.innerHTML = `<button class="btn close-btn" type="button" data-modal-close>
+    <svg class="close-btn__icon" width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.733 10.304l-1.504-1.504-5.963 5.963-5.963-5.963-1.504 1.504 5.963 5.963-5.963 5.963 1.504 1.504 5.963-5.963 5.963 5.963 1.504-1.504-5.963-5.963 5.963-5.963z"></path>
     </svg>
   </button>
   <div class="modal-movie__thumb">
@@ -74,5 +111,5 @@
         </button>
       </li>
     </ul>
-  </div>
-</div>
+  </div>`;
+}

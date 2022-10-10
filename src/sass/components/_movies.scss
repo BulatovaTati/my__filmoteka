@@ -2,6 +2,7 @@
 .cards {
   padding-top: 59px;
   padding-bottom: 59px;
+
   &__list {
     display: flex;
     flex-direction: row;
@@ -25,6 +26,7 @@
     width: 280px;
     object-fit: cover;
 
+
     @media screen and (min-width: 768px) {
       width: 336px;
     }
@@ -34,24 +36,28 @@
     }
   }
 }
+
 .movie-card {
   &__info {
     margin-top: 10px;
     @include lh(14px, 12px, 12px);
+
     @media screen and (min-width: 768px) {
       margin-top: 8px;
       @include lh(16px, 12px, 12px);
     }
-    
+
     @media screen and (min-width: 1280px) {
       margin-top: 12px;
       @include lh(24px, 20px, 20px);
     }
+
     &-short {
       color: rgba(255, 107, 8, 1);
       margin-right: 10px;
     }
-}
+  }
+
   &__img {
     border-radius: 5px;
     // height: 400px;

@@ -1,6 +1,6 @@
 .scrolltop__btn {
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
     background-color: #000000;
     
     display: flex;
@@ -9,7 +9,7 @@
     
     position: fixed;
     opacity: 0.8;
-    z-index: 999;
+    z-index: 10;
 
     cursor: pointer;
     bottom: 8%;
@@ -17,12 +17,18 @@
 
     border-radius: 50px;
     border: 10px double #ff6b08;
-}
 
-.scrolltop__btn:hover,
-.scrolltop__btn:focus {
-        opacity: 1;
-    }
+    @media screen and (min-width: 768px) {
+            width: 65px;
+            height: 65px;
+            right: 5%;
+        }
+
+                &:hover,
+                &:focus {
+                    opacity: 1;
+                }
+}
 
 .transitionBtn {
      transition: 1000ms;
@@ -32,6 +38,11 @@
     width: 50px;
     height: 50px;
     fill: #ff6b08;
+
+    @media screen and (min-width: 768px) {
+            width: 65px;
+            height: 65px;
+        }
 }
 
 .is-hidden-button {

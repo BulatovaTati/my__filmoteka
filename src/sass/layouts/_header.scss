@@ -99,6 +99,10 @@
   }
 }
 
+.header__icon {
+  animation: scale-logo 2000ms infinite linear;
+}
+
 .logo {
   @extend %link;
 
@@ -220,7 +224,6 @@
   margin-left: -20px;
   margin-bottom: 12px;
   cursor: pointer;
-  z-index: 99;
 
   &:hover,
   &:focus {
