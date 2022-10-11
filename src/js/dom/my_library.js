@@ -19,7 +19,7 @@ function handleClickQueue() {
 
 function handleClickWatched() {
   deletedMessage();
-  renderSavedFilms('settings');
+  renderSavedFilms('watch');
   setDisabled(watchedButton);
   removeDisabled(queueButton);
 }
