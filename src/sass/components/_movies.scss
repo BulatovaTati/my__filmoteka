@@ -53,6 +53,9 @@
 .card__img {
   object-fit: cover;
   border-radius: 5px;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .card__info {

@@ -13,3 +13,11 @@ import './js/dom/modal-footer';
 import './js/dom/my_library';
 import './js/dom/scrollToTop';
 import './js/other/other-index';
+
+// const doc = document.querySelector('.header__library');
+
+// if (doc) {
+//   const footer = document.querySelector('.footer');
+//   footer.style.position = 'fixed';
+//   footer.style.bottom = '0';
+// }
