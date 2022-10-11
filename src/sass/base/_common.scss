@@ -13,12 +13,19 @@ body {
     }
 }
 
+// body {
+
+
+//     &.modal-open,
+//     &.is-open {
+//         overflow: hidden;
+//     }
+
+// }
+
 body {
 
-
-    &.modal-open,
-    &.is-open {
+    &.js-modal-is-hidden {
         overflow: hidden;
     }
-
 }
