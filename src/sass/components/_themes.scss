@@ -43,3 +43,8 @@
 .dark .movie-card__info-title {
     color: getColor(white-text-color);
 }
+
+.dark .card__genre,
+.dark .card__year {
+    color: getColor(white-text-color);
+}

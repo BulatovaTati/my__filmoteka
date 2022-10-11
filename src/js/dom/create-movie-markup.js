@@ -72,36 +72,44 @@ export function cardRender({
   let year = '';
   if (release_date) {
     year = release_date.slice(0, 4);
-  }
-  else {
+  } else {
     year = first_air_date.slice(0, 4);
   }
   changeGenresIdsToNames(genre_ids);
-  return `<li class="cards__item"> 
-            <a href="" class="link gallery-art">
-              <div class="film-img">
-                  <img class="movie-card__img" id='${id}' src="${
-    poster_path === null ? noPosterImg : BASE_IMG_URL + poster_path
-  }" alt="Poster of movie">
+  return `<li class="card__item"> 
+            <a href="#" class="gallery-art">
+
+              <div class="card__img--container">
+                  <img class="card__img" id='${id}'
+                   src="${
+                     poster_path === null
+                       ? noPosterImg
+                       : BASE_IMG_URL + poster_path
+                   }" 
+                   alt="Poster of movie">
               </div> 
-              <div class="film-description">
-                <h2 class="movie-card__info-title">${
-                  title ? title : name
-                }</h2>      
-                <div class="film-info">          
-                  <p class="genres">${
-                    genre_ids ? genre_ids.join(', ') : 'no genres'
-                  }<span>${' '}|${' '}</span></p>
-                  <p class="year">${
-                    year ? year : 'no year'
-                  }<span>${' '}|${' '}</span></p> 
-                  <div class="rating-wrap">
-                    <p class="rating">${
+
+              <div class="card__info">
+
+                <h2 class="card__title">${title ? title : name}</h2>     
+
+                <div class="card__decr">          
+                  <p class="card__genre">
+                  ${
+                    genre_ids
+                      ? genre_ids.splice(0, 2).concat('Other').join(', ')
+                      : 'no genres'
+                  }
+                    <span>${' '}|${' '}</span>
+                  </p>
+                  <p class="card__year">${year ? year : 'no year'}
+                    </p> 
+                    <p class="card__rating">${
                       vote_average.toFixed(1)
                         ? vote_average.toFixed(1)
                         : 'no rate'
                     }</p> 
-                  </div>
+ 
                 </div>
               </div>
             </a>

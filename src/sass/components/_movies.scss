@@ -1,133 +1,109 @@
-// < !-- <li class="cards__item"></li>-->
-a {
-  text-decoration: none;
-}
-
-p {
-  display: inline-block;
-}
-
 .cards {
-  padding-top: 59px;
-  padding-bottom: 59px;
-
-  &__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 20px;
-
-    justify-content: center;
-
-    @media screen and (min-width: 768px) {
-      row-gap: 32px;
-      column-gap: 32px;
-    }
-
-    @media screen and (min-width: 1280px) {
-      row-gap: 32px;
-      column-gap: 15px;
-    }
-  }
-
-  &__item {
-    width: 280px;
-    object-fit: cover;
-    margin-bottom: 20px;
-
-    @media screen and (min-width: 768px) {
-      width: 336px;
-    }
-
-    @media screen and (min-width: 1280px) {
-      width: 395px;
-    }
-  }
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
-.movie-card {
-  &__info {
-    margin-top: 10px;
-    @include lh(14px, 12px, 12px);
-
-    @media screen and (min-width: 768px) {
-      margin-top: 8px;
-      @include lh(16px, 12px, 12px);
-    }
-
-    @media screen and (min-width: 1280px) {
-      margin-top: 12px;
-      @include lh(24px, 20px, 20px);
-    }
-
-    &-short {
-      color: rgba(255, 107, 8, 1);
-      margin-right: 10px;
-    }
-  }
-
-  &__img {
-    border-radius: 5px;
-    // height: 400px;
-    // @media screen and (min-width: 768px) {
-    //   width: 455px;
-    // }
-
-    // @media screen and (min-width: 1280px) {
-    //   width: 574px;
-    // }
-  }
-
-  &__info-title {
-    color: #000;
-    margin-top: 5px;
-    margin-right: 0;
-    margin-bottom: 5px;
-    margin-left: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    text-transform: uppercase;
-  }
-}
-
-.film-info {
-  position: absolute;
-  color: #FF6B08;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-}
-
-.rating {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  /* identical to box height */
-
+.cards__list {
   display: flex;
-  align-items: center;
-  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    row-gap: 32px;
+    column-gap: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    row-gap: 32px;
+    column-gap: 15px;
+  }
+}
+
+.card__item {
+  width: 280px;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+  }
+}
+
+
+.card__img--container {
+  height: 398px;
+  margin-bottom: 8px;
+
+
+  @media screen and (min-width: getSize(tablet)) {
+    height: 455px;
+  }
+
+  @media screen and (min-width: getSize(desktop)) {
+    height: 574px;
+    margin-bottom: 12px;
+  }
+}
+
+.card__img {
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card__info {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card__title,
+.card__genre,
+.card__year {
+  @media screen and (min-width: getSize(desktop)) {
+    @include lh(24px, 20px, 20px);
+  }
+}
+
+.card__decr {
+  display: flex;
+  align-items: center
+}
+
+.card__title {
+  @include lh(16px, 12px, 12px);
+  color: getColor(primary-text-color);
   text-transform: uppercase;
 
-  color: #FFFFFF;
+  @media screen and (min-width: getSize(desktop)) {
+
+    @include lh(24px, 20px, 20px);
+  }
 }
 
-.rating-wrap {
-  position: relative;
-  bottom: 2px;
-  display: inline-block;
-  background: #FF6B01;
+.card__genre,
+.card__year {
+  color: getColor(accent-text-color);
+  margin-right: 5px;
+}
+
+.card__rating {
+  width: 36px;
+  height: 16px;
+  @include lh(14px, 12px, 12px);
+  color: getColor(white-text-color);
+  background-color: getColor(accent-bg-color);
   border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  text-align: center;
+  padding: 1px 8px;
+
+  @media screen and (min-width: getSize(desktop)) {
+    width: 44px;
+    height: 20px;
+    padding: 3px 10px;
+    @include lh(14px, 17px, 17px);
+  }
 }
