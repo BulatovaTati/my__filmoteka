@@ -7,3 +7,4 @@ import './create-movie-markup';
 import './create-movie-modal-markup';
 import './changeGenresToName';
 import './reanderTranding';
+import './localeStorage-watch&queue';
