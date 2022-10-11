@@ -243,6 +243,7 @@
   margin-left: -20px;
   margin-bottom: 12px;
   cursor: pointer;
+  z-index: 99;
 
   &:hover,
   &:focus {
@@ -279,9 +280,10 @@
   display: flex;
   justify-content: center;
   opacity: 0;
-  transition: all 2s ease-out;
+  // transition: opacity 2s linear;
+  transition: all 4s ease;
+  // transition: all 2s ease-out;
 }
-
 .visually-show-error {
   transition: all 4s ease;
   opacity: 1;
