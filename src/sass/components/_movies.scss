@@ -16,6 +16,7 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 20px;
+    color: #000;
 
     justify-content: center;
 
@@ -33,7 +34,6 @@ p {
   &__item {
     width: 280px;
     object-fit: cover;
-    margin-bottom: 20px;
 
     @media screen and (min-width: 768px) {
       width: 336px;
@@ -47,23 +47,23 @@ p {
 
 .movie-card {
   &__info {
-    margin-top: 10px;
-    @include lh(14px, 12px, 12px);
+    // margin-top: 10px;
+    // @include lh(14px, 12px, 12px);
 
-    @media screen and (min-width: 768px) {
-      margin-top: 8px;
-      @include lh(16px, 12px, 12px);
-    }
+    // @media screen and (min-width: 768px) {
+    //   margin-top: 8px;
+    //   @include lh(16px, 12px, 12px);
+    // }
 
-    @media screen and (min-width: 1280px) {
-      margin-top: 12px;
-      @include lh(24px, 20px, 20px);
-    }
+    // @media screen and (min-width: 1280px) {
+    //   margin-top: 12px;
+    //   @include lh(24px, 20px, 20px);
+    // }
 
-    &-short {
-      color: rgba(255, 107, 8, 1);
-      margin-right: 10px;
-    }
+    // &-short {
+    //   color: rgba(255, 107, 8, 1);
+    //   margin-right: 10px;
+    // }
   }
 
   &__img {
@@ -79,30 +79,58 @@ p {
   }
 
   &__info-title {
-    color: #000;
-    margin-top: 5px;
-    margin-right: 0;
-    margin-bottom: 5px;
-    margin-left: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
     text-transform: uppercase;
   }
 }
+.film {
+  &-description {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
 
-.film-info {
-  position: absolute;
-  color: #FF6B08;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+    margin-top: 10px;
+    @include lh(14px, 12px, 12px);
+
+    @media screen and (min-width: 768px) {
+      margin-top: 8px;
+      @include lh(16px, 12px, 12px);
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 12px;
+      @include lh(24px, 20px, 20px);
+    }
+  }
+  &-info {
+    color: #ff6b08;
+  }
 }
+// .film-info {
+//   position: absolute;
+//   color: #ff6b08;
+
+//   font-family: 'Roboto', sans-serif;
+//   font-style: normal;
+//   font-weight: 500;
+
+//   @include lh(14px, 12px, 12px);
+
+//   @media screen and (min-width: 768px) {
+//     margin-top: 8px;
+//     @include lh(16px, 12px, 12px);
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     margin-top: 12px;
+//     @include lh(24px, 20px, 20px);
+//   }
+
+//   &-short {
+//     color: rgba(255, 107, 8, 1);
+//     margin-right: 10px;
+//   }
+// }
 
 .rating {
   font-family: 'Roboto';
@@ -117,14 +145,14 @@ p {
   text-align: center;
   text-transform: uppercase;
 
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .rating-wrap {
   position: relative;
   bottom: 2px;
   display: inline-block;
-  background: #FF6B01;
+  background: #ff6b01;
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
