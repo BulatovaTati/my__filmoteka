@@ -7,9 +7,9 @@ const backdrop = document.querySelector('.backdrop');
 
 let movieData = {};
 
-cardsList.addEventListener('click', onCardClick);
+cardsList.addEventListener('click', onMovieCardClick);
 
-function onCardClick(e) {
+function onMovieCardClick(e) {
   e.preventDefault();
 
   const selectedMovie = e.target.closest('li');
@@ -21,12 +21,12 @@ function onCardClick(e) {
 
       modalMovieToggle();
       modalMovie.innerHTML = renderMovieInfo(response);
-      addModalListeners();
+      addModalMovieListeners();
     })
     .catch(error => console.log(error));
 }
 
-function onCloseModal(e) {
+function onCloseModalMovie(e) {
   e.preventDefault();
 
   const isContainsClass =
@@ -35,8 +35,8 @@ function onCloseModal(e) {
 
   if (e.code === 'Escape' || isContainsClass || e.target === backdrop) {
     modalMovieToggle();
-    clearMovieInfo();
-    removeModalListeners();
+    clearModalMovieInfo();
+    removeModalMovieListeners();
   }
 }
 
@@ -46,19 +46,19 @@ function modalMovieToggle() {
   document.body.classList.toggle('modal-open');
 }
 
-function addModalListeners() {
-  backdrop.addEventListener('click', onCloseModal);
-  window.addEventListener('keydown', onCloseModal);
-  modalMovie.addEventListener('click', onCloseModal);
+function addModalMovieListeners() {
+  backdrop.addEventListener('click', onCloseModalMovie);
+  window.addEventListener('keydown', onCloseModalMovie);
+  modalMovie.addEventListener('click', onCloseModalMovie);
 }
 
-function removeModalListeners() {
-  backdrop.removeEventListener('click', onCloseModal);
-  window.removeEventListener('keydown', onCloseModal);
-  modalMovie.removeEventListener('click', onCloseModal);
+function removeModalMovieListeners() {
+  backdrop.removeEventListener('click', onCloseModalMovie);
+  window.removeEventListener('keydown', onCloseModalMovie);
+  modalMovie.removeEventListener('click', onCloseModalMovie);
 }
 
-function clearMovieInfo() {
+function clearModalMovieInfo() {
   modalMovie.innerHTML = '';
 }
 
