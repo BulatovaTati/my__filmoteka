@@ -11,7 +11,7 @@
   refs.modal.addEventListener('click', onBackdropClick);
 
   function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.toggle('is-open-modal');
     document.body.classList.toggle('js-modal-is-hidden');
     isShown
       ? document.body.removeEventListener('keydown', onKeyDown)
