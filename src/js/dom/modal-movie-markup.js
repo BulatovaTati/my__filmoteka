@@ -1,3 +1,4 @@
+
 function renderMovieInfo({
   poster_path,
   title,
@@ -62,14 +63,14 @@ function renderMovieInfo({
     <ul class="modal-movie__btn-list">
       <li class="modal-movie__btn-item">
         <button
-          class="button button--modal-btn button--accent-btn"
-          type="button"
+          class="button button--modal-btn"
+          type="button" data-action="watch"
         >
           add to Watched
         </button>
       </li>
       <li class="modal-movie__btn-item">
-        <button class="button button--modal-btn" type="button">
+        <button class="button button--modal-btn" type="button" data-action="queue">
           add to queue
         </button>
       </li>
