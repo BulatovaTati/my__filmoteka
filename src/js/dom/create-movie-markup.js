@@ -76,11 +76,11 @@ export function cardRender({
     year = first_air_date.slice(0, 4);
   }
   changeGenresIdsToNames(genre_ids);
-  return `<li class="card__item"> 
+  return `<li class="card__item" id='${id}'> 
             <a href="#" class="gallery-art">
 
               <div class="card__img--container">
-                  <img class="card__img" id='${id}'
+                  <img class="card__img "  id='${id}'
                    src="${
                      poster_path === null
                        ? noPosterImg
