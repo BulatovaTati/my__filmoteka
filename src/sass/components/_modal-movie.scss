@@ -56,11 +56,11 @@
   @media screen and (min-width: getSize(desktop)) {
     width: 806px;
     padding: 40px 12px;
+    border: 1px solid #000;
   }
 }
 
-.modal-movie::-webkit-scrollbar,
-.modal-movie__text::-webkit-scrollbar {
+.modal-movie::-webkit-scrollbar {
   display: none;
 }
 
@@ -189,7 +189,6 @@
 
 .modal-movie__text {
   margin-bottom: 20px;
-  overflow-y: auto;
 
   @include lh(20px, 12px, 12px);
 
