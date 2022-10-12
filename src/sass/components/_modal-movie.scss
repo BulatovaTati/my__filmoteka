@@ -29,7 +29,7 @@
   opacity: 1;
   visibility: visible;
 
-  padding: 48px 20px 40px;
+  padding: 40px 20px;
 
   background-color: getColor(white-text-color);
 
@@ -89,7 +89,7 @@
 }
 
 .modal-movie__thumb {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   border-radius: 5px;
 
   overflow: hidden;
@@ -125,7 +125,7 @@
 }
 
 .modal-movie__title {
-  margin-bottom: 17px;
+  margin-bottom: 19px;
 
   @include lh(23px, 20px, 20px);
   font-weight: 500;
