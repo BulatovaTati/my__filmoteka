@@ -1,5 +1,6 @@
 import { fetchMovieForId } from '../api/fetchApi';
 import { renderMovieInfo } from './modal-movie-markup';
+import {localStorageFunction} from './localeStorage-watch&queue';
 
 const cardsList = document.querySelector('.cards__list');
 const modalMovie = document.querySelector('.modal-movie');
@@ -22,7 +23,7 @@ function onMovieCardClick(e) {
       modalMovieToggle();
       modalMovie.innerHTML = renderMovieInfo(response);
       addModalMovieListeners();
-    })
+    }).then(()=> localStorageFunction(movieData))
     .catch(error => console.log(error));
 }
 
