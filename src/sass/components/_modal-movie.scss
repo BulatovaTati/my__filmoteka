@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 20;
   opacity: 0.25;
   visibility: visible;
 
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   background-color: getColor(primary-text-color);
 
@@ -22,10 +22,10 @@
 }
 
 .modal-movie {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 1;
+  z-index: 20;
   opacity: 1;
   visibility: visible;
 
@@ -183,19 +183,19 @@
 }
 
 .modal-movie__text {
-  height: 240px;
+  max-height: 240px;
   margin-bottom: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @include lh(20px, 12px, 12px);
 
   @media screen and (min-width: getSize(tablet)) and (max-width: getSize(wdesktop)) {
-    height: 220px;
+    max-height: 220px;
     margin-bottom: 40px;
   }
 
   @media screen and (min-width: getSize(desktop)) {
-    height: 160px;
+    max-height: 160px;
   }
 }
 
