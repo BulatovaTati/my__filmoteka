@@ -5,4 +5,7 @@ export const refs = {
   search_form: document.querySelector('#search-form'),
   input_error: document.querySelector('#js-input-error'),
   input: document.querySelector('.input__header'),
+  queueButton: document.querySelector('.queue_button'),
+  watchedButton: document.querySelector('.watched_button'),
+  noFilmsMessage: document.querySelector('.alert__mеssаge'),
 };

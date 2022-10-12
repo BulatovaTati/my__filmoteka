@@ -1,42 +1,35 @@
 import { refs } from '../common/refs';
 import { getFromStorage } from '../other/localeStorageServices';
 
-const queueButton = document.querySelector('.queue_button');
-const watchedButton = document.querySelector('.watched_button');
-const cardsSection = document.querySelector('.cards');
-const cardsList = document.querySelector('.cards__list');
-const noFilmsMessage = document.querySelector('.alert__mеssаge');
-
-watchedButton.addEventListener('click', handleClickWatched);
-queueButton.addEventListener('click', handleClickQueue);
+refs.watchedButton.addEventListener('click', handleClickWatched);
+refs.queueButton.addEventListener('click', handleClickQueue);
 
 renderSavedFilms('watch');
 
 function handleClickQueue() {
   renderSavedFilms('queue');
-  removeDisabled(watchedButton);
-  setDisabled(queueButton);
+  removeDisabled(refs.watchedButton);
+  setDisabled(refs.queueButton);
 }
 
 function handleClickWatched() {
   renderSavedFilms('watch');
-  setDisabled(watchedButton);
-  removeDisabled(queueButton);
+  setDisabled(refs.watchedButton);
+  removeDisabled(refs.queueButton);
 }
 
 function renderSavedFilms(name) {
   clearFilmList();
-
   const addedFilms = getFromStorage(name);
   if (addedFilms && addedFilms.length > 0) {
-    cardRender(addedFilms);
-    noFilmsMessage.classList.add('visually-hidden');
+    cardRendering(addedFilms);
+    refs.noFilmsMessage.classList.add('visually-hidden');
   } else {
-    noFilmsMessage.classList.remove('visually-hidden');
+    refs.noFilmsMessage.classList.remove('visually-hidden');
   }
 }
 
-function cardRender(result) {
+function cardRendering(result) {
   const cardListString = result
     .map(el => {
       const filmGenresArray = el.genres.map(genreObj => {
@@ -48,9 +41,9 @@ function cardRender(result) {
       const src = el.poster_path;
       const rating = el.vote_average.toFixed(1);
       const genre = filmGenresArray.join(', ');
-      return `<li class="cards__item ">    
-        <img src="https://image.tmdb.org/t/p/w500${src}" alt="Movie" class="card__img">
-        <div class="card__info">
+      return `<li class="cards__item ">
+      <div class="card__img--container "> <img src="https://image.tmdb.org/t/p/w500${src}" alt="Movie" class="card__img"></div>    
+               <div class="card__info">
           <h2 class="card__title">${title}</h2>
          <div class="card__decr">  
           <p class="card__genre">${genre} <span> | </span> </p>
@@ -67,10 +60,12 @@ function cardRender(result) {
 
 function setDisabled(el) {
   el.setAttribute('disabled', '');
+  el.classList.add('button-active');
 }
 function removeDisabled(el) {
   el.removeAttribute('disabled');
+  el.classList.remove('button-active');
 }
 function clearFilmList() {
-  cardsList.innerHTML = '';
+  refs.cardsContainer.innerHTML = '';
 }
