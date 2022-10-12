@@ -108,25 +108,3 @@
     @include lh(14px, 17px, 17px);
   }
 }
-
-.string__alert{
-    display: flex;
-    justify-content: space-around;
-    align-items: center; 
-    color: getColor(primary-text-color);
-    font-size: 35;
-    
-}
-
-.sorry{
-    display: flex;
-color: getColor(accent-text-color);
-font-size: 55;
-}
-
-.alert__mеssаge{
- display: flex;
-    flex-direction: column;
-    align-items: center;   
-}
-

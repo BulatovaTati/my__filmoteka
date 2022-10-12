@@ -6,7 +6,6 @@ const watchedButton = document.querySelector('.watched_button');
 const cardsAlert = document.querySelector('.cards');
 const cardsList = document.querySelector('.cards__list');
 
-
 watchedButton.addEventListener('click', handleClickWatched);
 queueButton.addEventListener('click', handleClickQueue);
 
@@ -29,12 +28,13 @@ function renderSavedFilms(name) {
   if (addedFilms && addedFilms.length > 0) {
     cardRender(addedFilms);
   } else {
-    const stringAlert = `<div class="alert__mеssаge">
-      <span class="sorry"> Sorry :(</span>
-      <p class="string__alert"> No movies have been added yet</p>
-      </div>
-      `;
-    cardsAlert.insertAdjacentHTML('afterbegin', stringAlert);
+    // const stringAlert = `
+    // <div class="container"><div class="alert__mеssаge">
+    //   <span class="sorry"> Sorry :(</span>
+    //   <p class="string__alert"> No movies have been added yet</p>
+    //   </div><>
+    //   `;
+    // cardsAlert.insertAdjacentHTML('afterend', stringAlert);
   }
 }
 
