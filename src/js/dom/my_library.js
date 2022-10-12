@@ -28,13 +28,13 @@ function renderSavedFilms(name) {
   if (addedFilms && addedFilms.length > 0) {
     cardRender(addedFilms);
   } else {
-    // const stringAlert = `
-    // <div class="container"><div class="alert__mеssаge">
-    //   <span class="sorry"> Sorry :(</span>
-    //   <p class="string__alert"> No movies have been added yet</p>
-    //   </div><>
-    //   `;
-    // cardsAlert.insertAdjacentHTML('afterend', stringAlert);
+    const stringAlert = `
+    <div class="container"><div class="alert__mеssаge">
+      <span class="sorry"> Sorry :(</span>
+      <p class="string__alert"> No movies have been added yet</p>
+      </div>
+      `;
+    cardsAlert.insertAdjacentHTML('afterend', stringAlert);
   }
 }
 
