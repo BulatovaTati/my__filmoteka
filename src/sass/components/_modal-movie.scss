@@ -28,8 +28,7 @@
   z-index: 20;
   opacity: 1;
   visibility: visible;
-  max-height: 100vh;
-  overflow-y: scroll;
+
   padding: 40px 20px;
 
   background-color: getColor(white-text-color);
@@ -249,7 +248,3 @@
   background-color: getColor(accent-bg-color);
   border: none;
 }
-
-// .added_video {
-//   background-color: none;
-// }
