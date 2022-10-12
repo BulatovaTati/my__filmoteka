@@ -56,8 +56,6 @@
   @media screen and (min-width: getSize(desktop)) {
     width: 806px;
     padding: 40px 12px;
-
-    border: 1px solid #000;
   }
 }
 
@@ -114,6 +112,7 @@
   @media screen and (max-width: getSize(wmobile)) {
     width: 99%;
   }
+
   width: 100%;
 
   @media screen and (min-width: getSize(tablet)) {

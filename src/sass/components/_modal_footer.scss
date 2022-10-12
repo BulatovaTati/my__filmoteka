@@ -32,7 +32,7 @@
 
      transition: transform getProperty(time) getProperty(cubic);
 
-     .overlay.is-hidden & {
+     & {
          transform: translate(-50%, -50%) scale(0.7);
      }
  }
@@ -70,7 +70,6 @@
 
  }
 
- footer {
-     position: fixed;
-     bottom: 0;
+ main {
+     min-height: 100vh;
  }
