@@ -71,9 +71,9 @@ export function cardRender({
 }) {
   let year = '';
   if (release_date) {
-    year = release_date.slice(0, 4);
+    year = release_date?.slice(0, 4);
   } else {
-    year = first_air_date.slice(0, 4);
+    year = first_air_date?.slice(0, 4);
   }
   changeGenresIdsToNames(genre_ids);
   return `<li class="card__item" data-id='${id}'> 
