@@ -1,6 +1,6 @@
 import { fetchMovieForId } from '../api/fetchApi';
 import { renderMovieInfo } from './modal-movie-markup';
-import {localStorageFunction} from './localeStorage-watch&queue';
+import { localStorageFunction } from './localeStorage-watch&queue';
 
 const cardsList = document.querySelector('.cards__list');
 const modalMovie = document.querySelector('.modal-movie');
@@ -12,19 +12,20 @@ cardsList.addEventListener('click', onMovieCardClick);
 
 function onMovieCardClick(e) {
   e.preventDefault();
+  if (e.target !== e.currentTarget) {
+    const selectedMovie = e.target.closest('li');
+    const selectedMovieId = Number(selectedMovie.getAttribute('data-id'));
+    fetchMovieForId(selectedMovieId)
+      .then(response => {
+        movieData = response;
 
-  const selectedMovie = e.target.closest('li');
-  const selectedMovieId = Number(selectedMovie.getAttribute('data-id'));
-
-  fetchMovieForId(selectedMovieId)
-    .then(response => {
-      movieData = response;
-
-      modalMovieToggle();
-      modalMovie.innerHTML = renderMovieInfo(response);
-      addModalMovieListeners();
-    }).then(()=> localStorageFunction(movieData))
-    .catch(error => console.log(error));
+        modalMovieToggle();
+        modalMovie.innerHTML = renderMovieInfo(response);
+        addModalMovieListeners();
+      })
+      .then(() => localStorageFunction(movieData))
+      .catch(error => console.log(error));
+  }
 }
 
 function onCloseModalMovie(e) {
