@@ -3,51 +3,44 @@ import { getFromStorage } from '../other/localeStorageServices';
 
 const queueButton = document.querySelector('.queue_button');
 const watchedButton = document.querySelector('.watched_button');
-const cardsAlert = document.querySelector('.cards');
+const cardsSection = document.querySelector('.cards');
 const cardsList = document.querySelector('.cards__list');
+const noFilmsMessage = document.querySelector('.alert__mеssаge');
 
 watchedButton.addEventListener('click', handleClickWatched);
 queueButton.addEventListener('click', handleClickQueue);
 
+renderSavedFilms('watch');
+
 function handleClickQueue() {
-  deletedMessage();
   renderSavedFilms('queue');
   removeDisabled(watchedButton);
   setDisabled(queueButton);
 }
 
 function handleClickWatched() {
-  deletedMessage();
   renderSavedFilms('watch');
   setDisabled(watchedButton);
   removeDisabled(queueButton);
 }
 
 function renderSavedFilms(name) {
+  clearFilmList();
+
   const addedFilms = getFromStorage(name);
   if (addedFilms && addedFilms.length > 0) {
     cardRender(addedFilms);
+    noFilmsMessage.classList.add('visually-hidden');
   } else {
-    const stringAlert = `
-    <div class="container"><div class="alert__mеssаge">
-      <span class="sorry"> Sorry :(</span>
-      <p class="string__alert"> No movies have been added yet</p>
-      </div>
-      `;
-    cardsAlert.insertAdjacentHTML('afterend', stringAlert);
+    noFilmsMessage.classList.remove('visually-hidden');
   }
 }
 
 function cardRender(result) {
-  const genresArray = getFromStorage('allGenres');
-  const genresObj = {};
-  genresArray.forEach(genre => {
-    genresObj[genre.id] = genre;
-  });
   const cardListString = result
     .map(el => {
-      const filmGenresArray = el.genre_ids.map(id => {
-        return genresObj[id].name;
+      const filmGenresArray = el.genres.map(genreObj => {
+        return genreObj.name;
       });
       const title = el.name || el.title;
       const year =
@@ -78,7 +71,6 @@ function setDisabled(el) {
 function removeDisabled(el) {
   el.removeAttribute('disabled');
 }
-function deletedMessage() {
+function clearFilmList() {
   cardsList.innerHTML = '';
-  cardsAlert.firstChild.innerHTML = '';
 }
