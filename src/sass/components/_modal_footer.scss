@@ -1,22 +1,22 @@
- .overlay {
-     position: fixed;
-     top: 0;
-     left: 0;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
 
-     height: 100vh;
-     width: 100vw;
-     background-color: getColor(modal-overlay);
-     z-index: 20;
+  height: 100vh;
+  width: 100vw;
+  background-color: getColor(modal-overlay);
+  z-index: 20;
 
-     transition: opacity getProperty(time) getProperty(cubic),
-         visibility getProperty(time) getProperty(cubic);
- }
+  transition: opacity getProperty(time) getProperty(cubic),
+    visibility getProperty(time) getProperty(cubic);
+}
 
- .is-open-modal {
-     opacity: 0;
-     pointer-events: none;
-     visibility: hidden;
- }
+.is-open-modal {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
 
  .modal {
      position: fixed;
@@ -28,44 +28,42 @@
      padding: 30px;
      background-color: getColor(white-text-color);
 
-     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 
-     transition: transform getProperty(time) getProperty(cubic);
+  transition: transform getProperty(time) getProperty(cubic);
 
-     & {
-         transform: translate(-50%, -50%) scale(0.7);
-     }
- }
+  & {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
 
- .footer__wrapper {
-     width: 600px;
-     max-width: 95vw;
-     border-radius: 20px;
+.footer__wrapper {
+  width: 600px;
+  max-width: 95vw;
+  border-radius: 20px;
+}
 
- }
+.foother-modal__btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 
- .foother-modal__btn {
-     width: 30px;
-     height: 30px;
-     cursor: pointer;
+  background-color: getColor(white-text-color);
+  border: 1px solid getColor(footer-text-color);
+  border-radius: 50%;
 
-     background-color: getColor(white-text-color);
-     border: 1px solid getColor(footer-text-color);
-     border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 
-     justify-content: center;
-     align-items: center;
-     padding: 0;
-     display: flex;
-     position: absolute;
-     top: 10px;
-     right: 10px;
+  transition: border-color getProperty(time) getProperty(cubic);
 
-     transition: border-color getProperty(time) getProperty(cubic);
-
-     &:hover,
-     &:focus {
-         border: 1px solid getColor(current-page);
-     }
-
- }
+  &:hover,
+  &:focus {
+    border: 1px solid getColor(current-page);
+  }
+}
