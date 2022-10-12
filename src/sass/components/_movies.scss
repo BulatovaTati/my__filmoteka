@@ -14,6 +14,7 @@
   @media screen and (min-width: 768px) {
     row-gap: 32px;
     column-gap: 32px;
+    justify-content: flex-start;
   }
 
   @media screen and (min-width: 1280px) {
@@ -34,11 +35,9 @@
   }
 }
 
-
 .card__img--container {
   height: 398px;
   margin-bottom: 8px;
-
 
   @media screen and (min-width: getSize(tablet)) {
     height: 455px;
@@ -73,7 +72,7 @@
 
 .card__decr {
   display: flex;
-  align-items: center
+  align-items: center;
 }
 
 .card__title {
@@ -82,7 +81,6 @@
   text-transform: uppercase;
 
   @media screen and (min-width: getSize(desktop)) {
-
     @include lh(24px, 20px, 20px);
   }
 }
@@ -110,3 +108,25 @@
     @include lh(14px, 17px, 17px);
   }
 }
+
+.string__alert{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    color: getColor(primary-text-color);
+    font-size: 35;
+    
+}
+
+.sorry{
+    display: flex;
+color: getColor(accent-text-color);
+font-size: 55;
+}
+
+.alert__mеssаge{
+ display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
