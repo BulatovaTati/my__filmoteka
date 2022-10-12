@@ -18,7 +18,7 @@ async function getPopularData(page) {
 }
 
 // Запит по назві фільму
-async function fetchMovieSearcher(text, page=1) {
+async function fetchMovieSearcher(text, page = 1) {
   try {
     const response = await axios.get(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${text}&page=${page}`
@@ -48,7 +48,6 @@ async function getGenres() {
     const response = await axios.get(
       `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
     );
-    console.log('response.data: ', response.data);
     return response.data;
   } catch (error) {
     console.error('Smth wrong with api search fetch' + error);
