@@ -2,7 +2,8 @@
     width: 100%;
     padding-bottom: 28px;
     padding-top: 28px;
-
+    position: absolute;
+    bottom: 0;
     background-color: getColor(footer-bcg);
     font-weight: 400;
     @include lh(16px, 14px, 14px);
