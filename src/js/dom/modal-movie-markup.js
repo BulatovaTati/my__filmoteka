@@ -1,4 +1,3 @@
-
 function renderMovieInfo({
   poster_path,
   title,
@@ -9,7 +8,7 @@ function renderMovieInfo({
   original_title,
   overview,
 }) {
-  const genresName = genres.map(genre => genre.name).join(', ');
+  const genresString = genres.map(genre => genre.name).join(', ');
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/';
   return `<button class="btn close-btn" type="button">
     <svg class="close-btn__icon" width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +31,9 @@ function renderMovieInfo({
             Vote / Votes
           </td>
           <td class="modal-movie__cell modal-movie__cell--gray-text">
-            <span class="modal-movie__span modal-movie__span--vote">${vote_average}</span> /
+            <span class="modal-movie__span modal-movie__span--vote">${vote_average.toFixed(
+              1
+            )}</span> /
             <span class="modal-movie__span modal-movie__span--votes">${vote_count}</span>
           </td>
         </tr>
@@ -40,7 +41,7 @@ function renderMovieInfo({
           <td class="modal-movie__cell modal-movie__cell--gray-text">
             Popularity
           </td>
-          <td class="modal-movie__cell">${popularity}</td>
+          <td class="modal-movie__cell">${popularity.toFixed(1)}</td>
         </tr>
         <tr>
           <td class="modal-movie__cell modal-movie__cell--gray-text">
@@ -54,7 +55,7 @@ function renderMovieInfo({
           >
             Genre
           </td>
-          <td class="modal-movie__cell modal-movie__cell--last-row">${genresName}</td>
+          <td class="modal-movie__cell modal-movie__cell--last-row">${genresString}</td>
         </tr>
       </tbody>
     </table>

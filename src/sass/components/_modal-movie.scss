@@ -38,7 +38,7 @@
     visibility getProperty(time) getProperty(cubic);
 
   @media screen and (max-width: getSize(wmobile)) {
-    width: 100%;
+    width: 98%;
   }
 
   @media screen and (min-width: getSize(mobile)) {
@@ -48,7 +48,7 @@
   @media screen and (min-width: getSize(tablet)) {
     width: 704px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 
     padding: 40px 36px 40px 36px;
   }
@@ -57,6 +57,11 @@
     width: 806px;
     padding: 40px 12px;
   }
+}
+
+.modal-movie::-webkit-scrollbar,
+.modal-movie__text::-webkit-scrollbar {
+  display: none;
 }
 
 .backdrop.is-hidden,
@@ -108,15 +113,15 @@
   }
 }
 
-.modal-movie__info-container {
-  @media screen and (max-width: getSize(wmobile)) {
-    width: 99%;
-  }
+.modal-movie__img {
+  object-fit: contain;
+}
 
+.modal-movie__info-container {
   width: 100%;
 
-  @media screen and (min-width: getSize(tablet)) {
-    width: 265px;
+  @media screen and (min-width: getSize(tablet)) and (max-width: getSize(wdesktop)) {
+    width: 264px;
   }
 
   @media screen and (min-width: getSize(desktop)) {
@@ -144,6 +149,7 @@
 }
 
 .modal-movie__cell {
+  width: 50%;
   padding-bottom: 5px;
 }
 
@@ -182,19 +188,16 @@
 }
 
 .modal-movie__text {
-  max-height: 240px;
   margin-bottom: 20px;
   overflow-y: auto;
 
   @include lh(20px, 12px, 12px);
 
   @media screen and (min-width: getSize(tablet)) and (max-width: getSize(wdesktop)) {
-    max-height: 220px;
     margin-bottom: 40px;
   }
 
   @media screen and (min-width: getSize(desktop)) {
-    max-height: 160px;
   }
 }
 
