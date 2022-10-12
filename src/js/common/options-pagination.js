@@ -1,7 +1,7 @@
 export const options = {
-  totalPages: 1000,
-  totalItems: 100,
-  itemsPerPage: 20,
+  // totalPages: 1000,
+  totalItems: 1000,
+  itemsPerPage: 1,
   visiblePages: 5,
   page: 1,
   centerAlign: true,
@@ -47,7 +47,7 @@ export const options = {
         template =
           '<a href="#" class=" tui-page-btn tui-last custom-class-last">' +
           '<span class="tui-ico-last">' +
-          options.totalPages +
+          options.totalItems +
           '</span>' +
           '</a>';
       }

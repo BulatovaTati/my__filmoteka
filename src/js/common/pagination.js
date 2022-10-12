@@ -9,20 +9,20 @@ const spinner = new Spinner();
 
 pagination.on('afterMove', onPaginationClick);
 
-function onPaginationClick(e) {
+async function onPaginationClick(e) {
   const selectedPage = e.page;
   const inputValue = localStorage.getItem('input-value');
 
   spinner.enable();
 
-  if (inputValue) {
-    const data = fetchMovieSearcher(inputValue, selectedPage);
+  if (inputValue !== '') {
+    const data = await fetchMovieSearcher(inputValue, selectedPage);
 
-    renderCollection(data.results);
+    const render = await renderCollection(data.results);
   } else {
-    const data = getPopularData(selectedPage);
+    const data = await getPopularData(selectedPage);
 
-    renderCollection(data.results);
+    const render = await renderCollection(data.results);
   }
 
   setTimeout(() => {
@@ -37,3 +37,5 @@ function scrollToTop() {
     behavior: 'smooth',
   });
 }
+
+export { pagination };
