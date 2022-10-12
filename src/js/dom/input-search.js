@@ -3,6 +3,7 @@ import { fetchMovieSearcher, getGenres } from '../api/fetchApi';
 import { renderCollection } from './create-movie-markup';
 import { addToStorage } from '../other/localeStorageServices';
 import Spinner from '../common/spinner';
+import { pagination } from '../common/pagination';
 
 const spinner = new Spinner();
 
@@ -47,6 +48,7 @@ refs.search_form.addEventListener('submit', onFormSubmit);
 
 async function onFormSubmit(e) {
   e.preventDefault();
+  pagination.movePageTo(1);
   const value = e.currentTarget.searchQuery.value.trim();
   spinner.enable();
   console.log(value);

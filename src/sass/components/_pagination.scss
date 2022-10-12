@@ -39,7 +39,6 @@
   &:focus {
     color: getColor(white-text-color);
     background-color: rgba(255, 107, 8, 0.7);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px #ffffff;
   }
 }
 
@@ -61,7 +60,6 @@
 
   background-color: getColor(accent-text-color);
   border-radius: 5px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px #ffffff;
 
   cursor: default;
 
@@ -69,7 +67,6 @@
   &:focus {
     background-color: getColor(accent-text-color);
     border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px #ffffff;
   }
 }
 
@@ -94,7 +91,6 @@
   &:hover,
   &:focus {
     background-color: rgba(255, 107, 8, 0.7);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px #ffffff;
   }
 }
 
