@@ -1,10 +1,20 @@
 import { getPopularData } from '../api/fetchApi';
 import { renderCollection } from './create-movie-markup';
-const page = 1;
+import { refs } from '../common/refs';
 
-getPopularData(page)
+function renderMovieTr() {
+  if (refs.input.value !== '') {
+    return;
+  }
+
+  const page = 1;
+
+  getPopularData(page)
     .then(data => {
-    renderCollection(data.results);
-    localStorage.setItem('input-value', '');
-  })
-  .catch(console.log);
+      renderCollection(data.results);
+      localStorage.setItem('input-value', '');
+    })
+    .catch(console.log);
+}
+
+renderMovieTr();
