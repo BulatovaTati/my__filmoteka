@@ -41,7 +41,7 @@ function cardRendering(result) {
       const src = el.poster_path;
       const rating = el.vote_average.toFixed(1);
       const genre = filmGenresArray.join(', ');
-      return `<li class="cards__item ">
+      return `<li class="card__item ">
       <div class="card__img--container "> <img src="https://image.tmdb.org/t/p/w500${src}" alt="Movie" class="card__img"></div>    
                <div class="card__info">
           <h2 class="card__title">${title}</h2>
