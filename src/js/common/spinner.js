@@ -1,6 +1,6 @@
 export default class Spinner {
   constructor() {
-    this.overlay = document.querySelector('.overlay');
+    this.overlay = document.querySelector('.spinner__overlay');
     this.spinner = document.querySelector('.spinner');
   }
 
