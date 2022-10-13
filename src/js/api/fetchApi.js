@@ -42,6 +42,18 @@ async function fetchMovieForId(id) {
   }
 }
 
+// Запит на трейлер фільму
+async function fetchMovieVideoForId(id) {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error('Smth wrong with api search fetch' + error);
+  }
+}
+
 // Запит до жанрыв фільму
 async function getGenres() {
   try {
@@ -54,4 +66,4 @@ async function getGenres() {
   }
 }
 
-export { getPopularData, fetchMovieSearcher, fetchMovieForId, getGenres };
+export { getPopularData, fetchMovieSearcher, fetchMovieForId, getGenres, fetchMovieVideoForId };
