@@ -1,6 +1,5 @@
 export const options = {
-  // totalPages: 1000,
-  totalItems: 1000,
+  totalItems: 20,
   itemsPerPage: 1,
   visiblePages: 5,
   page: 1,

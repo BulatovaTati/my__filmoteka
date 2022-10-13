@@ -11,24 +11,27 @@ pagination.on('afterMove', onPaginationClick);
 
 async function onPaginationClick(e) {
   const selectedPage = e.page;
-  const inputValue = localStorage.getItem('input-value');
+  const searchedValue = localStorage.getItem('input-value');
 
   spinner.enable();
 
-  if (inputValue !== '') {
-    const data = await fetchMovieSearcher(inputValue, selectedPage);
-
-    const render = await renderCollection(data.results);
+  if (searchedValue !== '') {
+    const dataResponse = await fetchMovieSearcher(searchedValue, selectedPage);
+    const renderDataMarkup = renderCollection(dataResponse.results);
   } else {
-    const data = await getPopularData(selectedPage);
-
-    const render = await renderCollection(data.results);
+    const dataResponse = await getPopularData(selectedPage);
+    const renderDataMarkup = renderCollection(dataResponse.results);
   }
 
   setTimeout(() => {
     scrollToTop();
     spinner.disable();
   }, 400);
+}
+
+function updateLastPaginationPage({ total_pages }) {
+  pagination.setTotalItems(total_pages);
+  document.querySelector('.tui-ico-last').innerHTML = total_pages;
 }
 
 function scrollToTop() {
@@ -39,3 +42,4 @@ function scrollToTop() {
 }
 
 export { pagination };
+export { updateLastPaginationPage };
