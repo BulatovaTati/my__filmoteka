@@ -11,3 +11,4 @@ import './js/dom/modal-footer';
 import './js/dom/my_library';
 import './js/dom/scrollToTop';
 import './js/other/other-index';
+import  './js/dom/modal-movie'
