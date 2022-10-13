@@ -4,7 +4,6 @@ const page = 1;
 
 getPopularData(page)
     .then(data => {
-      console.log(data);
     renderCollection(data.results);
     localStorage.setItem('input-value', '');
   })
