@@ -1,3 +1,5 @@
+import { noPosterImg } from './create-movie-markup';
+
 function renderMovieInfo({
   poster_path,
   title,
@@ -18,7 +20,7 @@ function renderMovieInfo({
   <div class="modal-movie__thumb">
     <img
       class="modal-movie__img"
-      src="${BASE_IMG_URL + poster_path}"
+      src="${poster_path === null ? noPosterImg : BASE_IMG_URL + poster_path}"
       alt="${original_title + ' poster'}"
     />
   </div>
