@@ -13,14 +13,14 @@ function localStorageFunction(movieData) {
     if (localStorage.getItem('watch').includes(filmObject) && localStorage.getItem('watch').length > 2) {
         watchBtn.classList.add('button--accent-btn')
         watchBtn.textContent = 'REMOVE FROM WATCHED'
-        queueBtn.disabled = true
+        // queueBtn.disabled = true
         
     }
 
     if (localStorage.getItem('queue').includes(filmObject) && localStorage.getItem('queue').length > 2) {
         queueBtn.classList.add('button--accent-btn')
         queueBtn.textContent = 'REMOVE FROM QUEUE'
-        watchBtn.disabled = true
+        // watchBtn.disabled = true
     }
 
 
@@ -35,12 +35,12 @@ function localStorageFunction(movieData) {
                 watchBtn.classList.remove('button--accent-btn')
                 watchBtn.textContent = 'ADD TO WATCHED'
                 film = film.filter(e => e.id !== movieData.id)
-                queueBtn.disabled = false
+                // queueBtn.disabled = false
             } else {
 
                 watchBtn.classList.add('button--accent-btn')
                 watchBtn.textContent = 'REMOVE FROM WATCHED'
-                queueBtn.disabled = true
+                // queueBtn.disabled = true
                 // queueBtn.classList.remove('button--accent-btn')
                 // queueBtn.textContent = 'ADD TO QUEUE'
                 film.push(movieData)
@@ -61,12 +61,12 @@ function localStorageFunction(movieData) {
                 queueBtn.classList.remove('button--accent-btn')
                 queueBtn.textContent = 'ADD TO QUEUE'
                 film = film.filter(e => e.id !== movieData.id)
-                watchBtn.disabled = false
+                // watchBtn.disabled = false
             } else {
 
                 queueBtn.classList.add('button--accent-btn')
                 queueBtn.textContent = 'REMOVE FROM QUEUE'
-                watchBtn.disabled = true
+                // watchBtn.disabled = true
                 // watchBtn.classList.remove('button--accent-btn')
                 // watchBtn.textContent = 'ADD TO WATCHED'
 
