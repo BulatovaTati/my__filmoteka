@@ -3,7 +3,7 @@ import { renderCollection } from './create-movie-markup';
 const page = 1;
 
 getPopularData(page)
-  .then(data => {
+    .then(data => {
     renderCollection(data.results);
     localStorage.setItem('input-value', '');
   })

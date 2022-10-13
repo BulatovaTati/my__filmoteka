@@ -49,20 +49,23 @@
 // ==========================
 
 import { refs } from '../common/refs';
-import { changeGenresIdsToNames } from './changeGenresToName';
+import { getFromStorage } from '../other/localeStorageServices';
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 // const SIZE_IMG = '/w500';
 const noPosterImg =
   'https://sd.keepcalms.com/i/sorry-no-picture-available-2.png';
+
+const genresObj = getFromStorage('allGenres');
 export function renderCollection(movies) {
   const markup = movies.map(movie => cardRender(movie)).join('');
-  return (refs.cardsContainer.innerHTML = markup);
+  refs.cardsContainer.innerHTML = markup;
 }
 
 export function cardRender({
   poster_path,
   title,
   genre_ids,
+  genres,
   release_date,
   first_air_date,
   vote_average,
@@ -75,7 +78,16 @@ export function cardRender({
   } else {
     year = first_air_date?.slice(0, 4);
   }
-  changeGenresIdsToNames(genre_ids);
+  let filmGenresArray;
+  if (genre_ids && genre_ids.length > 0) {
+    filmGenresArray = genre_ids.map(id => {
+      return genresObj[id];
+    });
+  } else if (genres && genres.length > 0) {
+    filmGenresArray = genres.map(({ name }) => {
+      return name;
+    });
+  }
   return `<li class="card__item" data-id='${id}'> 
             <a href="#" class="gallery-art">
 
@@ -96,8 +108,8 @@ export function cardRender({
                 <div class="card__decr">          
                   <p class="card__genre">
                   ${
-                    genre_ids
-                      ? genre_ids.splice(0, 2).concat('Other').join(', ')
+                    filmGenresArray && filmGenresArray.length > 0
+                      ? filmGenresArray.splice(0, 2).concat('Other').join(', ')
                       : 'no genres'
                   }
                     <span>${' '}|${' '}</span>
