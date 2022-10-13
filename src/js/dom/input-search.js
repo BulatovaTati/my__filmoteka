@@ -4,6 +4,7 @@ import { renderCollection } from './create-movie-markup';
 import { addToStorage } from '../other/localeStorageServices';
 import Spinner from '../common/spinner';
 import { pagination } from '../common/pagination';
+import { updateLastPaginationPage } from '../common/pagination';
 
 const spinner = new Spinner();
 
@@ -44,10 +45,11 @@ async function onFormSubmit(e) {
       spinner.disable();
       return;
     }
-    pagination.movePageTo(1);
     addToStorage('input-value', value);
     spinner.disable();
     renderCollection(movieArr);
+    updateLastPaginationPage(response);
+    pagination.movePageTo(1);
     refs.input.value = '';
   } catch (error) {
     console.log(error);

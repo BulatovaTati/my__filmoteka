@@ -226,7 +226,7 @@
   &:hover,
   &:focus {
     transform: scale(1.03);
-    border-bottom: 0.5px solid getColor(accent-text-color);
+    // border-bottom: 0.5px solid getColor(accent-text-color);
   }
 
   @media screen and (min-width: getSize(tablet)) {
