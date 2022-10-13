@@ -1,11 +1,9 @@
-
-
 function localStorageFunction(movieData) {
 
     const filmObject = JSON.stringify(movieData)
 
-    const watchBtn = document.querySelector('[data-action="watch"]')
-    const queueBtn = document.querySelector('[data-action="queue"]')
+  const watchBtn = document.querySelector('[data-action="watch"]');
+  const queueBtn = document.querySelector('[data-action="queue"]');
 
     watchBtn.addEventListener('click', addWatch)
     queueBtn.addEventListener('click', addQueue)
@@ -65,9 +63,9 @@ function localStorageFunction(movieData) {
                 film.push(movieData)
             }
 
-            localStorage.setItem('queue', JSON.stringify(film))
-        }
+      localStorage.setItem('queue', JSON.stringify(film));
     }
+  }
 }
 export { localStorageFunction }
 
