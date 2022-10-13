@@ -6,8 +6,8 @@
   opacity: 0.25;
   visibility: visible;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   background-color: getColor(primary-text-color);
 
@@ -28,7 +28,9 @@
   z-index: 20;
   opacity: 1;
   visibility: visible;
+  overflow-y: scroll;
 
+  max-height: 100%;
   padding: 40px 20px;
 
   background-color: getColor(white-text-color);
@@ -46,10 +48,10 @@
   }
 
   @media screen and (min-width: getSize(tablet)) {
-    width: 704px;
     display: flex;
     justify-content: flex-start;
 
+    width: 704px;
     padding: 40px 36px 40px 36px;
   }
 
@@ -204,15 +206,13 @@
   display: flex;
 
   @media screen and (max-width: getSize(wmobile)) {
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
 }
 
 .modal-movie__btn-item:not(:last-child) {
   @media screen and (max-width: getSize(wmobile)) {
-    margin-bottom: 16px;
+    margin-right: 2px;
   }
 
   @media screen and (min-width: getSize(mobile)) {
@@ -227,6 +227,10 @@
 .button.button--modal-btn {
   width: 110px;
   height: 44px;
+
+  @media screen and (max-width: getSize(wmobile)) {
+    padding: 1px 4px;
+  }
 
   @include lh(16px, 12px, 12px);
   text-transform: uppercase;
