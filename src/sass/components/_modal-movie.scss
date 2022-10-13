@@ -97,9 +97,17 @@
 
 .modal-movie__thumb {
   margin-bottom: 21px;
-  border-radius: 5px;
 
+  border-radius: 5px;
   overflow: hidden;
+  outline: 1px solid rgb(164, 164, 164);
+
+  @media screen and (min-width: getSize(mobile)) {
+    display: flex;
+    align-items: center;
+
+    height: 357px;
+  }
 
   @media screen and (min-width: getSize(tablet)) {
     width: 264px;
@@ -116,7 +124,8 @@
 }
 
 .modal-movie__img {
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-movie__info-container {
