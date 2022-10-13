@@ -92,7 +92,11 @@ async function onFormSubmit(e) {
 }
 
 getGenres()
-  .then(data => {
-    addToStorage('allGenres', data.genres);
+  .then(({ genres }) => {
+    const genresObj = {};
+    genres.forEach(({ id, name }) => {
+      genresObj[id] = name;
+    });
+    addToStorage('allGenres', genresObj);
   })
   .catch(console.log);

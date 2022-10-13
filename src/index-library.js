@@ -6,7 +6,6 @@ import './js/api/api-index';
 import './js/common/refs';
 import './js/common/spinner';
 // Dom
-import './js/dom/changeGenresToName';
 import './js/dom/create-movie-markup';
 import './js/dom/modal-footer';
 import './js/dom/my_library';
