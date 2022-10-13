@@ -2,8 +2,7 @@
 
 function localStorageFunction(movieData) {
 
-
-    // const filmObject = JSON.stringify(movieData)
+    const filmObject = JSON.stringify(movieData)
 
     const watchBtn = document.querySelector('[data-action="watch"]')
     const queueBtn = document.querySelector('[data-action="queue"]')
@@ -12,34 +11,34 @@ function localStorageFunction(movieData) {
     queueBtn.addEventListener('click', addQueue)
 
 
-    if (localStorage.getItem('watch').includes(movieData.id) && localStorage.getItem('watch').length > 2) {
+    if (localStorage.getItem('watch').includes(filmObject) && localStorage.getItem('watch').length > 2) {
         watchBtn.classList.add('button--accent-btn')
         watchBtn.textContent = 'REMOVE FROM WATCHED'
     }
 
-    if (localStorage.getItem('queue').includes(movieData.id) && localStorage.getItem('queue').length > 2) {
+    if (localStorage.getItem('queue').includes(filmObject) && localStorage.getItem('queue').length > 2) {
         queueBtn.classList.add('button--accent-btn')
         queueBtn.textContent = 'REMOVE FROM QUEUE'
     }
 
     function addWatch() {
 
-        if (movieData.id) {
+        if (movieData) {
             let film = JSON.parse(localStorage.getItem('watch')) || []
 
-            if (film.includes(movieData.id)) {
+            if (film.includes(movieData)) {
 
                 watchBtn.classList.remove('button--accent-btn')
                 watchBtn.textContent = 'ADD TO WATCHED'
-                film = film.filter(eId => eId !== movieData.id)
+                film = film.filter(eId => eId !== movieData)
 
             } else {
 
                 watchBtn.classList.add('button--accent-btn')
                 watchBtn.textContent = 'REMOVE FROM WATCHED'
-                // queueBtn.classList.remove('button--accent-btn')
-                // queueBtn.textContent = 'ADD TO QUEUE'
-                film.push(movieData.id)
+                queueBtn.classList.remove('button--accent-btn')
+                queueBtn.textContent = 'ADD TO QUEUE'
+                film.push(movieData)
 
             }
 
@@ -50,20 +49,20 @@ function localStorageFunction(movieData) {
 
     function addQueue() {
 
-        if (movieData.id) {
+        if (movieData) {
             let film = JSON.parse(localStorage.getItem('queue')) || []
 
 
-            if (film.includes(movieData.id)) {
+            if (film.includes(movieData)) {
                 queueBtn.classList.remove('button--accent-btn')
                 queueBtn.textContent = 'ADD TO QUEUE'
-                film = film.filter(eId => eId !== movieData.id)
+                film = film.filter(eId => eId !== movieData)
             } else {
                 queueBtn.classList.add('button--accent-btn')
                 queueBtn.textContent = 'REMOVE FROM QUEUE'
-                // watchBtn.classList.remove('button--accent-btn')
-                // watchBtn.textContent = 'ADD TO WATCHED'
-                film.push(movieData.id)
+                watchBtn.classList.remove('button--accent-btn')
+                watchBtn.textContent = 'ADD TO WATCHED'
+                film.push(movieData)
             }
 
             localStorage.setItem('queue', JSON.stringify(film))
