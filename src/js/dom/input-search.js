@@ -48,7 +48,8 @@ async function onFormSubmit(e) {
     spinner.disable();
     renderCollection(movieArr);
     updateLastPaginationPage(response);
-    pagination.movePageTo(1);
+    pagination.reset(response.total_pages);
+    updateLastPaginationPage(response);
     refs.input.value = '';
   } catch (error) {
     console.log(error);
