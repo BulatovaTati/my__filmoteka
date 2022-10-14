@@ -1,9 +1,9 @@
-import { isWatchTabActive, refs } from '../common/refs';
+import { refs } from '../common/refs';
 
 
 function localStorageFunction(movieData) {
   const filmObject = JSON.stringify(movieData);
-
+const isLibraryPage = location.pathname.includes('library');
   const cartItem = document.querySelector(`[data-id="${movieData.id}"]`);
 //   console.log(cartItem, movieData.id);
 
@@ -40,7 +40,7 @@ function localStorageFunction(movieData) {
         watchBtn.textContent = 'ADD TO WATCHED';
         film = film.filter(e => e.id !== movieData.id);
         // queueBtn.disabled = false
-        const isLibraryPage = location.pathname.includes('library');
+        // const isLibraryPage = location.pathname.includes('library');
         if (isLibraryPage && cartItem && refs.isWatchTabActive) {
           cartItem.remove();
         }
@@ -66,9 +66,9 @@ function localStorageFunction(movieData) {
         film = film.filter(e => e.id !== movieData.id);
         // watchBtn.disabled = false;
 
-        const isLibraryPage = location.pathname.includes('library');
+          
+          console.log(isLibraryPage);
           if (isLibraryPage && cartItem && !refs.isWatchTabActive) {
-              console.log(cartItem);
                    cartItem.remove();
         }
       } else {
