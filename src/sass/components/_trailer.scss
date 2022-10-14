@@ -10,7 +10,18 @@
     width: 25px;
     height: 25px;
 
-    margin-right: 12px;
+    margin-right: 10px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        margin-right: 14px;
+
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        margin-right: 17px;
+    }
+
+
 
 }
 
