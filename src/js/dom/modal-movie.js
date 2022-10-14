@@ -37,7 +37,7 @@ function onCloseModalMovie(e) {
 
   if (e.code === 'Escape' || isContainsClass || e.target === backdrop) {
     modalMovieToggle();
-    // clearModalMovieInfo();
+    clearModalMovieInfo();
     removeModalMovieListeners();
   }
 }
@@ -60,8 +60,8 @@ function removeModalMovieListeners() {
   modalMovie.removeEventListener('click', onCloseModalMovie);
 }
 
-// function clearModalMovieInfo() {
-//   modalMovie.innerHTML = '';
-// }
+function clearModalMovieInfo() {
+  modalMovie.innerHTML = '';
+}
 
 export { movieData };
