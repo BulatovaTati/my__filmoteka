@@ -67,17 +67,14 @@
   padding-right: 5px;
 }
 
-.card__title,
-.card__genre,
-.card__year {
-  @media screen and (min-width: getSize(desktop)) {
-    @include lh(24px, 20px, 20px);
-  }
-}
 
 .card__decr {
   display: flex;
   align-items: center;
+
+  @media screen and (min-width: getSize(desktop)) {
+    font-size: 17px;
+  }
 }
 
 .card__title {
