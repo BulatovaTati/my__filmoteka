@@ -1,5 +1,9 @@
 .pagination {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: getSize(tablet)) {
+    margin-bottom: 60px;
+  }
 }
 
 .tui-pagination {
@@ -29,6 +33,9 @@
 
   background-color: transparent;
   border-radius: 5px;
+
+  opacity: 1;
+  visibility: visible;
 
   transition: 350ms;
 
@@ -112,7 +119,7 @@
   display: none;
 
   @media screen and (min-width: getSize(tablet)) {
-    display: inline;
+    display: flex;
   }
 }
 
@@ -120,4 +127,9 @@
   font-family: 'Material Icons';
   font-size: 16px;
   line-height: 1;
+}
+
+.btn-hidden {
+  opacity: 0;
+  visibility: hidden;
 }
