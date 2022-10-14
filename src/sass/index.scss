@@ -2,18 +2,3 @@
 @import './base/base-index.scss';
 @import './components/components.scss';
 @import './layouts/layouts.scss';
-
-::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-    background-color: white;
-
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 9em;
-    box-shadow:
-        inset 0px 11px 8px -10px #ff6b08,
-        inset 0px -11px 8px -10px #ff6b08;
-}
