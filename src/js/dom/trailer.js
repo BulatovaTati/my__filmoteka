@@ -1,41 +1,18 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-
 import { fetchMovieVideoForId } from '../api/fetchApi';
-const cont = document.querySelector('.cards__list');
-
-onTrailerClick();
-
-function onTrailerClick() {
-  cont.addEventListener('click', watchTrailer);
-}
-
-function watchTrailer(e) {
-  if (!e.target.classList.contains('card__img')) {
-    return;
-  }
-  dataIdSearch(e.target.closest('.card__item').dataset.id);
-}
-
-function dataIdSearch(id) {
-  resiveDataFetch(id)
-    .then(renderTrailer)
-    .catch(error => {
-      console.log(error);
-    });
-}
 
 function resiveDataFetch(id) {
-  return fetchMovieVideoForId(id).then(data => {
-    console.log(data.results);
-
-    return data.results;
-  });
+  return fetchMovieVideoForId(id)
+    .then(data => data.results)
+    .then(data => {
+      renderTrailer(data);
+    })
+    .catch(console.log);
 }
 
 function renderTrailer(data) {
   let key = '';
-
   data.forEach(obj => {
     if (obj.name.includes('Official')) {
       key = obj.key;
@@ -51,13 +28,7 @@ function creatTrailerLink(key) {
   allowfullscreen class="trailer_video">
   </iframe>
 `);
-
-  setTimeout(() => {
-    const trailerbtn = document.querySelector('.button--trailer');
-    trailerbtn.addEventListener('click', watchTrailer);
-  }, 300);
-
-  function watchTrailer() {
-    trailer.show();
-  }
+  trailer.show();
 }
+
+export { resiveDataFetch };
