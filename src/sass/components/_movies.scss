@@ -2,9 +2,9 @@
   padding-top: 20px;
   padding-bottom: 40px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: getSize(tablet)) {
     padding-top: 60px;
-    padding-bottom: 0px;
+    padding-bottom: 60px;
   }
 }
 
@@ -16,13 +16,13 @@
 
   justify-content: center;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: getSize(tablet)) {
     row-gap: 32px;
     column-gap: 32px;
     justify-content: flex-start;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: getSize(desktop)) {
     row-gap: 32px;
     column-gap: 15px;
   }
@@ -31,11 +31,11 @@
 .card__item {
   width: 280px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: getSize(tablet)) {
     width: 336px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: getSize(desktop)) {
     width: 395px;
   }
 }
