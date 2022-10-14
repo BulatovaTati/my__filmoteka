@@ -12,7 +12,7 @@ export const options = {
     currentPage:
       '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
     disabledMoveButton:
-      '<span class="visually-hidden tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="btn-hidden tui-page-btn tui-is-disabled tui-{{type}}">' +
       '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</span>',
     moreButton:
@@ -24,7 +24,7 @@ export const options = {
 
       if (type === 'first') {
         template =
-          '<a href="#" class=" tui-page-btn tui-first custom-class-first">' +
+          '<a href="#" class="tui-page-btn tui-first custom-class-first">' +
           '<span class="tui-ico-first">1</span>' +
           '</a>';
       }
@@ -44,7 +44,7 @@ export const options = {
 
       if (type === 'last') {
         template =
-          '<a href="#" class=" tui-page-btn tui-last custom-class-last">' +
+          '<a href="#" class="tui-page-btn tui-last custom-class-last">' +
           '<span class="tui-ico-last">' +
           options.totalItems +
           '</span>' +
