@@ -17,6 +17,10 @@ body {
   &.js-modal-is-hidden {
     overflow: hidden;
   }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .ext-pad {
