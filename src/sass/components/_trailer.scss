@@ -1,0 +1,30 @@
+.button--trailer {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.modal-movie__svg--ytb {
+    width: 25px;
+    height: 25px;
+
+    margin-right: 12px;
+
+}
+
+.basicLightbox__placeholder iframe {
+    height: 240px;
+    min-width: 320px;
+
+    @media screen and (min-width: getSize(tablet)) {
+        height: 460px;
+        width: 740px;
+    }
+
+    @media screen and (min-width: getSize(desktop)) {
+        height: 600px;
+        width: 1024px;
+    }
+}
