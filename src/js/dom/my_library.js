@@ -1,6 +1,8 @@
-import { refs } from '../common/refs';
+
+import {  isWatchTabActive, refs } from '../common/refs';
 import { getFromStorage } from '../other/localeStorageServices';
-import { cardRender, renderCollection } from './create-movie-markup';
+import { renderCollection } from './create-movie-markup';
+
 
 refs.watchedButton.addEventListener('click', handleClickWatched);
 refs.queueButton.addEventListener('click', handleClickQueue);
@@ -11,12 +13,16 @@ function handleClickQueue() {
   renderSavedFilms('queue');
   removeDisabled(refs.watchedButton);
   setDisabled(refs.queueButton);
+    refs.isWatchTabActive = false;
+    console.log(refs.isWatchTabActive);
 }
 
 function handleClickWatched() {
   renderSavedFilms('watch');
   setDisabled(refs.watchedButton);
   removeDisabled(refs.queueButton);
+    refs.isWatchTabActive = true;
+    console.log(refs.isWatchTabActive);
 }
 
 function renderSavedFilms(name) {
