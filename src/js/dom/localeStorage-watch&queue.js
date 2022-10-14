@@ -1,11 +1,10 @@
 import { refs } from '../common/refs';
-
+import { getFromStorage } from '../other/localeStorageServices';
 
 function localStorageFunction(movieData) {
   const filmObject = JSON.stringify(movieData);
-const isLibraryPage = location.pathname.includes('library');
+  const isLibraryPage = location.pathname.includes('library');
   const cartItem = document.querySelector(`[data-id="${movieData.id}"]`);
-//   console.log(cartItem, movieData.id);
 
   const watchBtn = document.querySelector('[data-action="watch"]');
   const queueBtn = document.querySelector('[data-action="queue"]');
@@ -19,7 +18,6 @@ const isLibraryPage = location.pathname.includes('library');
   ) {
     watchBtn.classList.add('button--accent-btn');
     watchBtn.textContent = 'REMOVE FROM WATCHED';
-    // queueBtn.disabled = true
   }
 
   if (
@@ -28,33 +26,26 @@ const isLibraryPage = location.pathname.includes('library');
   ) {
     queueBtn.classList.add('button--accent-btn');
     queueBtn.textContent = 'REMOVE FROM QUEUE';
-    // watchBtn.disabled = true
   }
 
   function addWatch() {
     if (movieData) {
       let film = JSON.parse(localStorage.getItem('watch')) || [];
-
       if (film.find(e => e.id === movieData.id)) {
         watchBtn.classList.remove('button--accent-btn');
         watchBtn.textContent = 'ADD TO WATCHED';
         film = film.filter(e => e.id !== movieData.id);
-        // queueBtn.disabled = false
-        // const isLibraryPage = location.pathname.includes('library');
         if (isLibraryPage && cartItem && refs.isWatchTabActive) {
           cartItem.remove();
         }
       } else {
         watchBtn.classList.add('button--accent-btn');
         watchBtn.textContent = 'REMOVE FROM WATCHED';
-        // queueBtn.disabled = true
-        // queueBtn.classList.remove('button--accent-btn')
-        // queueBtn.textContent = 'ADD TO QUEUE'
         film.push(movieData);
       }
-
       localStorage.setItem('watch', JSON.stringify(film));
     }
+    isLocalStorageEmpty('watch');
   }
 
   function addQueue() {
@@ -64,23 +55,25 @@ const isLibraryPage = location.pathname.includes('library');
         queueBtn.classList.remove('button--accent-btn');
         queueBtn.textContent = 'ADD TO QUEUE';
         film = film.filter(e => e.id !== movieData.id);
-        // watchBtn.disabled = false;
 
-          
-          console.log(isLibraryPage);
-          if (isLibraryPage && cartItem && !refs.isWatchTabActive) {
-                   cartItem.remove();
+        if (isLibraryPage && cartItem && !refs.isWatchTabActive) {
+          cartItem.remove();
         }
       } else {
         queueBtn.classList.add('button--accent-btn');
         queueBtn.textContent = 'REMOVE FROM QUEUE';
-        // watchBtn.disabled = true;
-        // watchBtn.classList.remove('button--accent-btn')
-        // watchBtn.textContent = 'ADD TO WATCHED'
         film.push(movieData);
       }
       localStorage.setItem('queue', JSON.stringify(film));
     }
+    isLocalStorageEmpty('queue');
   }
 }
+
+function isLocalStorageEmpty(name) {
+  if (getFromStorage(name).length === 0) {
+    refs.noFilmsMessage.classList.remove('visually-hidden');
+  }
+}
+
 export { localStorageFunction };
