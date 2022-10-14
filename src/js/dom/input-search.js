@@ -14,7 +14,6 @@ async function onFormSubmit(e) {
   e.preventDefault();
   const value = e.currentTarget.searchQuery.value.trim();
   spinner.enable();
-  console.log(value);
   if (!value) {
     refs.input.value = '';
     refs.input_error.classList.add('visually-show-error');
