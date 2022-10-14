@@ -6,14 +6,16 @@ import { renderCollection } from '../dom/create-movie-markup';
 
 const pagination = new Pagination('pagination', options);
 const spinner = new Spinner();
-const refs = {
-  lastPageBtnText: document.querySelector('.tui-ico-last'),
-};
+// const refs = {
+//   lastPageBtnText: document.querySelector('.tui-ico-last'),
+// };
 
 pagination.on('afterMove', onPaginationClick);
 
 async function onPaginationClick(e) {
-  const lastPageNumber = Number(refs.lastPageBtnText.textContent);
+  const lastPageNumber = Number(
+    document.querySelector('.tui-ico-last').textContent
+  );
   const selectedPage = e.page;
   const searchedValue = localStorage.getItem('input-value');
 
@@ -40,7 +42,9 @@ async function onPaginationClick(e) {
 function hideBtn(selectedPage) {
   const firstPageBtnRef = document.querySelector('.custom-class-first');
   const lastPageBtnRef = document.querySelector('.custom-class-last');
-  const lastPageNumber = Number(refs.lastPageBtnText.textContent);
+  const lastPageNumber = Number(
+    document.querySelector('.tui-ico-last').textContent
+  );
 
   if (selectedPage < 4) {
     firstPageBtnRef.classList.add('btn-hidden');
@@ -57,7 +61,7 @@ function hideBtn(selectedPage) {
 
 function updateLastPaginationPage({ total_pages }) {
   pagination.setTotalItems(total_pages);
-  refs.lastPageBtnText.innerHTML = total_pages;
+  document.querySelector('.tui-ico-last').innerHTML = total_pages;
 }
 
 function scrollToTop() {
