@@ -22,6 +22,7 @@ export function cardRender({
   vote_average,
   name,
   id,
+  overview,
 }) {
   let year = '';
   if (release_date) {
@@ -29,7 +30,9 @@ export function cardRender({
   } else {
     year = first_air_date?.slice(0, 4);
   }
+
   let filmGenresArray;
+
   if (genre_ids && genre_ids.length > 0) {
     filmGenresArray = genre_ids.map(id => {
       return genresObj[id];
@@ -39,11 +42,21 @@ export function cardRender({
       return name;
     });
   }
+
+  let movieOverviev = overview;
+
+  const overviewInfo = overview.trim().split(' ').length;
+  if (overviewInfo === '') {
+    movieOverviev = 'Sorry there is no overview of that movie';
+  } else if (overviewInfo < 3 || overviewInfo > 90) {
+    movieOverviev = 'Click to read more';
+  }
+
   return `<li class="card__item" data-id='${id}'> 
             <a href="#" class="gallery-art">
 
               <div class="card__img--container">
-                  <img class="card__img "  data-id='${id}'
+                  <img class="card__img "
                    src="${
                      poster_path === null
                        ? noPosterImg
@@ -74,7 +87,11 @@ export function cardRender({
                     }</p> 
  
                 </div>
+
               </div>
+                                <div class="cards-back-text">
+              <span class="description_films"> ${movieOverviev} </span>
+                </div>
             </a>
           </li>`;
 }
