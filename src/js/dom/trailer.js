@@ -2,13 +2,25 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { fetchMovieVideoForId } from '../api/fetchApi';
 
-function resiveDataFetch(id) {
-  return fetchMovieVideoForId(id)
+let id;
+
+function onLoadTrailer(movieId) {
+  id = movieId;
+  const trailerbtn = document.querySelector('.button--trailer');
+  trailerbtn.addEventListener('click', resiveDataFetch);
+}
+
+function resiveDataFetch() {
+  fetchMovieVideoForId(id)
     .then(data => data.results)
     .then(data => {
+      // if (data.length === 0) {
+      //   alert('Sorry. There is no trailer for this movie!');
+      //   return;
+      // }
       renderTrailer(data);
     })
-    .catch(console.log);
+    .catch(error => console.log(error));
 }
 
 function renderTrailer(data) {
@@ -31,4 +43,4 @@ function creatTrailerLink(key) {
   trailer.show();
 }
 
-export { resiveDataFetch };
+export { onLoadTrailer };
