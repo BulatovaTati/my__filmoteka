@@ -14,10 +14,6 @@ function resiveDataFetch() {
   fetchMovieVideoForId(id)
     .then(data => data.results)
     .then(data => {
-      // if (data.length === 0) {
-      //   alert('Sorry. There is no trailer for this movie!');
-      //   return;
-      // }
       renderTrailer(data);
     })
     .catch(error => console.log(error));
