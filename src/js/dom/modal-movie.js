@@ -1,20 +1,23 @@
 import { fetchMovieForId } from '../api/fetchApi';
 import { renderMovieInfo } from './modal-movie-markup';
 import { localStorageFunction } from './localeStorage-watch&queue';
+import { resiveDataFetch } from './trailer';
 
 const cardsList = document.querySelector('.cards__list');
 const modalMovie = document.querySelector('.modal-movie');
 const backdrop = document.querySelector('.backdrop');
-
 let movieData = {};
+let selectedMovieId;
 
 cardsList.addEventListener('click', onMovieCardClick);
 
 function onMovieCardClick(e) {
   e.preventDefault();
+
   if (e.target !== e.currentTarget) {
     const selectedMovie = e.target.closest('li');
-    const selectedMovieId = Number(selectedMovie.getAttribute('data-id'));
+    selectedMovieId = Number(selectedMovie.getAttribute('data-id'));
+
     fetchMovieForId(selectedMovieId)
       .then(response => {
         movieData = response;
@@ -23,7 +26,12 @@ function onMovieCardClick(e) {
         modalMovie.innerHTML = renderMovieInfo(response);
         addModalMovieListeners();
       })
-      .then(() => localStorageFunction(movieData))
+      .then(() => {
+        const trailerbtn = document.querySelector('.button--trailer');
+        trailerbtn.addEventListener('click', onClickBtnTrailer);
+
+        localStorageFunction(movieData);
+      })
       .catch(error => console.log(error));
   }
 }
@@ -62,6 +70,10 @@ function removeModalMovieListeners() {
 
 function clearModalMovieInfo() {
   modalMovie.innerHTML = '';
+}
+
+function onClickBtnTrailer() {
+  resiveDataFetch(selectedMovieId);
 }
 
 export { movieData };
