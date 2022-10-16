@@ -57,7 +57,6 @@
 
   @media screen and (min-width: getSize(desktop)) {
     width: 806px;
-    padding: 40px 12px;
     border: 1px solid #000;
   }
 }
@@ -207,8 +206,7 @@
     margin-bottom: 40px;
   }
 
-  @media screen and (min-width: getSize(desktop)) {
-  }
+  @media screen and (min-width: getSize(desktop)) {}
 }
 
 .modal-movie__btn-list {
