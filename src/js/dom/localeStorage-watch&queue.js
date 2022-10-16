@@ -71,7 +71,7 @@ function localStorageFunction(movieData) {
 }
 
 function isLocalStorageEmpty(name) {
-  if (getFromStorage(name).length === null) {
+  if (getFromStorage(name).length === 0) {
     refs.noFilmsMessage.classList.remove('visually-hidden');
   }
 }
