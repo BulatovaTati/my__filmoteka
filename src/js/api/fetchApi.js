@@ -10,7 +10,6 @@ async function getPopularData(page) {
       `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`
     );
     const data = await response.data;
-    // console.log(data);
     return response.data;
   } catch (error) {
     console.error('Smth wrong with api get full trends' + error);
@@ -66,4 +65,10 @@ async function getGenres() {
   }
 }
 
-export { getPopularData, fetchMovieSearcher, fetchMovieForId, getGenres, fetchMovieVideoForId };
+export {
+  getPopularData,
+  fetchMovieSearcher,
+  fetchMovieForId,
+  getGenres,
+  fetchMovieVideoForId,
+};
