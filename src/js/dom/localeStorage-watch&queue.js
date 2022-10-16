@@ -72,7 +72,10 @@ function localStorageFunction(movieData) {
 
 function isLocalStorageEmpty(name) {
   if (getFromStorage(name).length === 0) {
-    refs.noFilmsMessage.classList.remove('visually-hidden');
+    if (refs.noFilmsMessage) {
+      refs.noFilmsMessage.classList.remove('visually-hidden');
+    }
+    return;
   }
 }
 
