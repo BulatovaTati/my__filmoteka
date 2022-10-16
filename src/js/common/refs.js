@@ -7,6 +7,6 @@ export const refs = {
   input: document.querySelector('.input__header'),
   queueButton: document.querySelector('.queue_button'),
   watchedButton: document.querySelector('.watched_button'),
-    noFilmsMessage: document.querySelector('.alert__mеssаge'),
+  noFilmsMessage: document.querySelector('.alert__message'),
   isWatchTabActive: true,
 };
