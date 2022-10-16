@@ -2,6 +2,8 @@ import { fetchMovieForId } from '../api/fetchApi';
 import { renderMovieInfo } from './modal-movie-markup';
 import { localStorageFunction } from './localeStorage-watch&queue';
 import { onLoadTrailer } from './trailer';
+import Spinner from '../common/spinner';
+const spinner = new Spinner();
 
 const cardsList = document.querySelector('.cards__list');
 const modalMovie = document.querySelector('.modal-movie');
@@ -16,11 +18,14 @@ function onMovieCardClick(e) {
     const selectedMovie = e.target.closest('li');
     const selectedMovieId = Number(selectedMovie.getAttribute('data-id'));
 
+    spinner.enable();
+
     fetchMovieForId(selectedMovieId)
       .then(response => {
         modalMovieToggle();
         modalMovie.innerHTML = renderMovieInfo(response);
         addModalMovieListeners();
+        spinner.disable();
         return response;
       })
       .then(response => {

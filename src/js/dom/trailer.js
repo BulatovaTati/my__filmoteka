@@ -1,6 +1,8 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { fetchMovieVideoForId } from '../api/fetchApi';
+import Spinner from '../common/spinner';
+const spinner = new Spinner();
 
 let id;
 
@@ -11,10 +13,12 @@ function onLoadTrailer(movieId) {
 }
 
 function resiveDataFetch() {
+  spinner.enable();
   fetchMovieVideoForId(id)
     .then(data => data.results)
     .then(data => {
       renderTrailer(data);
+      spinner.disable();
     })
     .catch(error => console.log(error));
 }
