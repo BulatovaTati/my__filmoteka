@@ -62,8 +62,7 @@ export function cardRender({
                        ? noPosterImg
                        : BASE_IMG_URL + poster_path
                    }" 
-                   alt="Poster of movie">
-                   loading="lazy"
+                   alt="Poster of movie"  loading="lazy">
               </div> 
 
               <div class="card__info">
