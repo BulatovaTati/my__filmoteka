@@ -80,9 +80,11 @@ API/AXIOS/Запити Написати всі axios.get src/js/ api
 ! "Юра Погорілець" src/js/common - pagination.js/ src/partials pagination.html/
 scss
 
+
 1. FT-08 Зверстати чи підключити номери сторінок (пагінація) на головній
    сторінці
 2. FT-09 При переході на кожну сторінку малювати відповідну частину фільмів
+3. FT-21 Підключити/зверстати Loader (spinner) для асинхронних запитів
 
 ! "Diana Pustolyakova" src/partials /library-collection/ header-library
 
@@ -116,5 +118,5 @@ scss
 ! "Андрій Степанюк" src/js/other - localeStrageServices src/partions -
 spinner.html/scss
 
-1. FT-21 Підключити/зверстати Loader (spinner) для асинхронних запитів
+1. Реалізувати запит по трейлерам та підключити трейлер до модального вікна
 2. FT-22 To top, скрол на верх
